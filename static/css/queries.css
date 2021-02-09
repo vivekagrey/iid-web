@@ -1,0 +1,66 @@
+@media only screen and (min-device-width: 1300px){
+    .org-logo{
+        margin: 30px 0px!important;
+    }
+}
+
+@media only screen and (min-device-width: 1025px) and (max-device-width: 1220px){
+    .navbar-navv{
+    font-size: 110%;
+    }
+    .nav-linkk{
+    padding: 0px 8px!important;
+    }
+}
+
+@media only screen and (min-device-width: 992px) {
+    .leadd-text{
+        font-size: 1.5rem !important;}
+}
+
+
+@media only screen and (min-device-width: 992px) and (max-device-width: 1024px) {
+    .navbar-navv{
+    font-size: 100%;
+    }
+    .nav-linkk{
+    padding: 0px 6px!important;
+    }
+    #topBtn{font-size: 1.25rem}
+    .org-logo-img{width: 7vw;}
+}
+
+@media only screen and (max-device-width: 992px) {
+    .navbar-navv{
+    font-size: 100%;
+    }
+    .nav-linkk{
+    padding: 5px 6px!important;
+    }
+}
+
+@media only screen and (max-device-width: 768px) {
+    .footer-social i{font-size: 1.2rem;}
+    .footer-lists li a{font-size: 0.7rem;}
+    .feee{font-size: 0.8rem;}
+    .feee-amt{font-size: 1.1rem;}
+    #topBtn{font-size: 1rem}
+    .org-logo-img{width: 6vw;}
+}
+
+@media only screen and (max-device-width: 480px) {
+    .univ-header h1{
+    font-size: 2.5rem;
+    }
+    .navbar-navv{
+    font-size: 100%;
+    }
+    .nav-linkk{
+    padding: 5px 6px!important;
+    }
+    .feee{font-size: 0.7rem;}
+    .feee-amt{font-size: 1rem;}
+    #topBtn{font-size: 0.75rem}
+    .org-logo-img{width: 12vw;}
+    .sidebar{display: none}
+}

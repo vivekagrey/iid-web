@@ -1,0 +1,5 @@
+db.sqlite3
+myproject/settings.py
+media
+assets
+static

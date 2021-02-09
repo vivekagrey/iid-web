@@ -1,0 +1,85 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block extra_head %}
+<title>Organizations Trained by Indian Institute of Drone | Professional Drone Pilot Training India</title>
+<meta name="keywords" content="drone pilot courses, professional drone uav training, fixed wing drone pilot training, multirotor drone pilot training">
+<meta name="description" content="List of Organizations trained by Indian Institute of Drones. Get Certified by Ex - UAV Military Instructors. Become a UAV Pilot.">
+{% endblock %}
+
+{% block content %}
+<style>
+    #myInput {
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        color:black;
+    }
+</style>
+
+<div class="container-fluid univ-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>ORGANIZATIONS TRAINED SO FAR</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="org-trained my-3">
+    <div class="container">
+        <div class="container">
+            <div class="row">
+                <input type="text" style="color:black" id="myInput" onkeyup="myFunction()" placeholder="Search for a organization..." title="Type a name">
+            </div>
+            <div class="row">
+                <div class="col-md-12" style="text-align: center">
+                    <table class="table table-striped" id="myTable">
+                        <thead>
+                            <th><center>S. No.</center></th>
+                            <th><center>Organization Name</center></th>
+                            <th><center>Location</center></th>
+                        </thead>
+                        <tbody>
+                            {% for org in organization %}
+                            <tr>
+                                <td>{{forloop.counter}}</td>
+                                <td>{{org.name}}</td>
+                                <td>{{org.location}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                    } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+{% endblock %}

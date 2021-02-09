@@ -1,0 +1,85 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<div class="container-fluid univ-header">
+    <div class="container">
+        <div class="row">
+            <h1>MY COURSES</h1>
+        </div>
+    </div>
+</div>
+
+{% if order_items %}
+
+    {% for order_item in order_items %}
+
+
+<section class="my-courses">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row mycourselist">
+                <div class="col-md-2">
+                    {% if order_item.get_item.online_course %}
+                        {% if order_item.course_age %}
+<!--                            course not expired-->
+<!--                            display image with url to lessons-->
+                            <a href="{{ order_item.get_item.get_lesson_list }}"><img src="{{order_item.get_item.image.url}}" width="100%"></a>
+                            Expiry Date : <button>{{order_item.get_expiry_date}}</button>
+                        {% else %}
+<!--                            course expired-->
+<!--                            display course image only-->
+                            <img src="{{order_item.get_item.image.url}}" width="100%">
+                            Expired on : <button>{{order_item.get_expiry_date}} IST</button>
+                        {% endif %}
+                    {% else %}
+                    <a href="{% url 'account:schedule'%}"><img src="{{order_item.get_item.image.url}}"  width="100%"></a>
+                    {% endif %}
+                </div>
+                <div class="col-md-5">
+                    <h5><b>{{order_item.get_item}}</b></h5>
+                    <br>
+                    <p>
+                        Transaction ID : {{order_item.order_set.all.first.transaction.transaction_id}}
+                    </p>
+                </div>
+                <div class="col-md-2">
+                    <h5>
+                        Purchased on : <br>{{order_item.order_set.all.first.ordered_date}}
+                    </h5>            
+                </div>
+                <div class="col-md-3">
+                    <div class="" style="text-align: center">
+                        {% if order_item.get_item.online_course %}
+                            {% if order_item.course_age %}
+                                <a class="btn btn-primary" href="{{ order_item.get_item.get_lesson_list }}">Start Course</a>
+                            {% else %}
+                                <a class="btn btn-primary" href="#">Course Expired</a>
+                            {% endif %}
+                        {% else %}
+                        <a class="btn btn-primary" href="{% url 'account:schedule' %}">View Training Schedule</a>
+                        {% endif %}
+                        <br><br>
+                        <a class="btn btn-info" href="{% url 'app:pdf_view' order_item.get_order_transaction %}" target="_blank">View Invoice</a>
+<!--                        href for invoice button updated-->
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        {% endfor %}
+
+    {% endif %}
+
+<!--    If no course is purchased then, flag == True
+        The following code will execute-->
+    {% if flag %}
+        <br>
+        <a href="{% url 'app:courses' %}" class="btn btn-success">Checkout Courses</a>
+    {% endif %}
+
+{% endblock %}

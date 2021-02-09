@@ -1,0 +1,86 @@
+{% extends "app/base.html" %}
+{% block extra_head %}
+<title>Order Summary</title>
+
+<style>
+    .cart-page-header {
+    background: #283B62;
+    color: #fff;
+}
+
+.cart-page-header h1 {
+    margin: 40px auto;
+}
+
+.order-summary {
+    background-color: #fff;
+}
+
+.order-table {
+    margin: 40px auto !important;
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid univ-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>ORDER SUMMARY</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="order-summary">
+    <div class="container-fluid">
+        <div class="container">
+            <table class="table order-table">
+                <thead>
+                    <tr>
+                        <th class="ordsum">SL</th>
+                        <th class="ordsum">Item Title</th>
+                        <th class="ordsum">Price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order_item in object.items.all %}
+                    <tr>
+                        <td class="odsum">{{ forloop.counter }}</td>
+                        <td class="odsum">{{ order_item.item.title }}</td>
+                        <td class="odsum">₹ {{ order_item.item.price }}</td>
+                        <td>
+                            <a style="color: #ff0000" href="{% url 'app:remove-from-cart' order_item.item.slug %}">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="4">Your cart is empty</td>
+                    </tr>
+                    {% endfor %}
+                    {% if object.get_total %}     
+                    <tr>
+                        <td class="odsm" colspan="2"><strong>Order Total</strong></td>
+                        <td class="odsm" colspan="2"><strong>₹ {{ object.get_total }}</strong></td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+            <div class="row" style="margin-bottom: 20px;">
+                <div class="col-xs-6">
+                    <a class='btn btn-primary' href="{% url 'app:courses' %}">Add Courses</a><i style="padding-right: 10px"></i>
+                    <a class='btn btn-success float-right' href="{% url 'app:checkout' %}">Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+

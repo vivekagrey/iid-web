@@ -1,0 +1,145 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block extra_head %}
+<title>Franchise - Indian Institute of Drones</title>
+<meta name="keywords" content="Drone Pilot Training Institute Franchise, Drone Pilot Training Affiliate Partner, UAV Training, UAV Training Center">
+<meta name="description" content="Become a franchisee/affiliate partner of Indian Institute of Drones and be a part of the drone training revolution in India">
+
+<style>
+    .franchise-header h1{
+        color: #fff;
+        padding: 50px 30px 0px;
+    }
+    .franchisee{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)), url("/static/images/Franchise/franchise-bg1.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: #fff;
+    }
+    .iid-intro{
+        font-size: 110%;
+        margin: 10px 0px;
+        font-weight: 500;
+    }
+    .video{
+        font-size: 100%;
+        font-weight: 400;
+    }
+    .fcard{
+        background-color: #000000!important;
+        color: #fff!important;
+        border-radius: 37px!important;
+        padding: 0px 5px!important;
+    }
+    .fcard h2{
+        font-size: 150%;
+        text-align: center;
+        margin: 12px 0px;
+    }
+    .fcard li{
+        margin: 30px 0px;
+    }
+    .fcard li span{color: #000}
+    .h2_heading{
+        padding: 20px 0px;
+    }
+    .h2_heading a{
+        color: #ff6830;
+    }
+    .h2_heading a:hover{
+        color: #fff;
+        text-decoration: none
+    }
+    .h3_heading{padding: 25px 5px;}
+    .h3_heading a{
+        color: #ff6830;
+    }
+    .h3_heading a:hover{
+        color: #fff;
+        text-decoration: none;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="franchisee">
+    <div class="container-fluid franchise-header">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>INDIAN INSTITUTE OF DRONES IS INVITING FRANCHISEES</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h1 class="iid-intro">
+                        Indian Institute of Drones provides the nation’s highest quality drone training with a simple yet comprehensive model for enterprise clients, government agencies, public safety departments, and individuals.
+                    </h1>
+                </div>
+            </div>
+            
+            <div class="row py-2">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10 text-center">
+                    <h2 class="video py-2">Watch the video to see how you can benefit by becoming an Indian Institute of Drones Franchisee</h2>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" width="100%" height="auto" src="https://www.youtube.com/embed/vahF8NlC-q0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row pt-5">
+                <div class="col-sm-4">
+                    <div class="card fcard">
+                        <h2>Benefits</h2>
+                        <ul>
+                            <li>Proven business model with a track record of commercial success</li>
+                            <li>Opportunity to become a geographic leader in a unique industry</li>
+                            <li>Experienced management backing with full support package</li>
+                            <li>Creating a sustainable, professional working environment which you enjoy and feel proud of, making it tangible</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card fcard">
+                        <h2>Financial Aspects</h2>
+                        <ul>
+                            <li>Total investment required is 5 Lacs INR<br><span>a</span></li>
+                            <li>In which, franchise fee is 3.9 Lacs INR<br><span>a</span></li>
+                            <li>1 Lac INR is required for office setup<br><span>a</span></li>
+                            <li>Carn earn at least 16 Lacs INR per annum<br><span>a</span><br><span>a</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card fcard">
+                        <h2>Receivables</h2>
+                        <ul>
+                            <li>NPNT Compliant DGCA Ready Drone Johnnette-JR5 (1 Set)</li>
+                            <li>Drone Simulator (1 Set)<br><span>a</span></li>
+                            <li>Training for instructor - 2 days along with Instructor certificate and ID card</li>
+                            <li>Entire Course material and IID Merchandise (1 Set)<br><span>a</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row py-4">
+                <div class="col-sm-12 text-center">
+                    <h2 class="h2_heading"><a href="tel:+918074611720">CALL US TO BECOME YOUR OWN BOSS</a></h2>
+                    <img src="{% static 'images/Franchise/pros1.png' %}" width="80%" alt="IID Franchise Prospectus">
+                    <img src="{% static 'images/Franchise/pros2.png' %}" width="80%" alt="IID Franchise Prospectus">
+                    <h3 class="h3_heading"><a href="/contact#contact-main">Fill out the form to receive the full Franchisee Prospectus</a></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

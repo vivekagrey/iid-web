@@ -1,0 +1,52 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block extra_head %}
+<title>Student Testimonials - Indian Institute of Drones | Drone Pilot Training Reviews</title>
+<meta name="keywords" content="drone pilot courses, online drone courses, fixed wing drone pilot training, multirotor drone pilot training">
+<meta name="description" content="Testimonials about Indian Institute of Drones. Get Certified by Ex - UAV Military Instructors. Become a UAV Pilot.">
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid univ-header">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h1>TESTIMONIALS</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="testimonial-page">
+    <div class="container-fluid py-4">
+        <div class="container">
+            <div class="row">
+                {% for std in student %}
+                <div class="col-sm-4 py-2">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" width="100%" height="auto" src="{{std.video_url}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="vid-desc">
+                        <p style="text-align: center; font-size: 14px; color: black; margin-bottom: 5px;">
+                        {{std.name}} <br>
+                        {{std.location}} <br>
+                        {{std.certificate_no}}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center py-3">
+                    <a class="btn btn-primary btn-lg" href="https://www.youtube.com/channel/UC1bP9s7ipvLu6OmvAf3H99Q/videos" target="_blank" rel="noreferrer">View All Testimonials</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

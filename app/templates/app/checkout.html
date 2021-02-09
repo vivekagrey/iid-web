@@ -1,0 +1,77 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+
+<div class="container-fluid univ-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>CHECKOUT</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="checkout-page py-3">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <h2>Order Summary</h2>
+                <table class="table order-table">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Item title</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                    {% for order_item in order.items.all %}
+                        <tr>
+                          <td>{{ forloop.counter }}</td>
+                          <td>{{ order_item.item.title }}</td>
+                          <td>₹{{ order_item.item.price }}</td>
+                        </tr>
+                        {% endfor %}
+
+                        {% if order.get_total %}
+                        <tr>
+                            <td colspan="2"><b>Order Total</b></td>
+                            <td><b>₹{{ order.get_total }}</b></td>
+                        </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="checkout-page pb-3">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <h2>Checkout Options</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <form method="POST" class="">
+                        {% csrf_token %}
+                        {% for value, name in form.fields.payment_option.choices %}
+                        <div class="custom-control custom-radio">
+                          <input id="{{ name }}" name="payment_option" value="{{ value }}" type="radio" class="custom-control-input" required>
+                          <label class="custom-control-label" for="{{ name }}">{{ name }}</label>
+                        </div>
+                        {% endfor %}
+                        <hr>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Complete Payment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+

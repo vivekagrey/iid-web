@@ -1,0 +1,352 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block extra_head %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+<title>DOMP Certification - Indian Institute of Drones | Online Drone and UAV Courses</title>
+<meta name="keywords" content="drone pilot courses, online drone courses, fixed wing drone pilot training, multirotor drone pilot training">
+<meta name="description" content="DOMP Certification by Indian Institute of Drones. Online Drone/UAV course for Drone Operations and Management Professionals">
+
+<style>
+    .page-header{
+         background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url("/static/images/Courses/drone-operations-management.jpg");
+         background-position: center;
+         background-size: cover;
+         background-repeat: no-repeat;
+         color: #fff;
+    }
+    .page-header h1{
+        color: #fff;
+        margin: 30px 0px 70px;
+        font-size: 3rem;
+    }
+    .heading{
+        font-weight: bold;
+        font-size: 125%;
+    }
+    .num{
+        display: inline-block;
+        margin-right: 0.25rem;
+        font-weight: 900;
+        line-height: 1;
+        font-size: 3.5rem;
+    }
+    .txt{
+        text-transform: uppercase;
+        font-weight: 300;
+        display: inline-block;
+        line-height: 1.2;
+    }
+    .linkk{
+        font-size: 1.3rem!important;
+        color: #ff6830;
+    }
+    .curriculumm{
+        padding-left: 20px;
+        padding-top: 10px;
+    }
+    
+    .curriculumm li{
+        padding: 6px 0px;
+        font-size: 1.1rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>{{course.title}}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="course-detail-page">
+    <div class="container-fluid">
+        <div class="container" style="max-width: 900px">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <div style="text-align: center; padding-top: 40px; padding-bottom: 10px;">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" width="700px" height="auto" src="https://www.youtube.com/embed/h6cf2VkVa8M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                   <h3 class="py-3" style="color: #000; font-weight: bold;">What is DOMP Certification?</h3>
+                    <p>Drone Operations & Management Professional (DOMP) Certification is provided by Indian Insitute of Drones which sets one of the highest standards for Drone operations in the world giving extreme importance to the flight safety, operating personnel and adherence to regulatory compliance of the region. Companies are recruiting candidates with DOMP Certification with higher salaries compared to others.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid py-4 highlights-container" id="course-curriculum">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h4>
+                        <span class="num">15</span>
+                        <span class="txt">Hours of<br>Content</span>
+                    </h4>
+                </div>
+                <div class="col-sm-4">
+                    <h4>
+                        <span class="num">7</span>
+                        <span class="txt">days of<br>Validity</span>
+                    </h4>
+                </div>
+                <div class="col-sm-4">
+                    <h4>
+                        <span class="num">6</span>
+                        <span class="txt">Topics in<br>Curriculum</span>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid py-4">
+        <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link linkk active" data-toggle="tab" href="#day1">What will you learn?</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link linkk" data-toggle="tab" href="#day2">Syllabus</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link linkk" data-toggle="tab" href="#day3">How does it work?</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="day1" class="container tab-pane active">
+                                    <ul class="curriculumm" style="">
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Drone Operations Management</li>
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Flight Data Management</li>
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Fleet & Pilots Team Management</li>
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Device Maintenance including Firmware Management</li>
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Mission Planning</li>
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Project Overseeing & Timely Execution</li>
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Cloud Data Security & Management</li>
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Regulatory Compliance for Drone Operations</li>
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Drone Selection for Specific Projects</li>
+                                    </ul>
+                                </div>
+                                <div id="day2" class="container tab-pane">
+                                    <ul class="curriculumm">
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Introduction and Fundamentals of Drone Technology</li>
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Components and Electronics in a Multi-Rotor</li>
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Drone Markets</li>
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> RPAS FAQ (Rules and Regulations as per DGCA CAR 1.0)</li>
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Drone Project Operations and Management</li>
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Aerodynamics of a Drone</li>
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Mission Planning, Project Overseeing and Timely Execution</li>
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Working of NPNT software</li>
+                                    </ul>
+                                </div>
+                                <div id="day3" class="container tab-pane">
+                                    <ul class="curriculumm">
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Check your eligibility</li>                   
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Apply online</li>                   
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Submit all relevant documents</li>                   
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Prepare for Exam either by Reference Book or take up online course</li>                   
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Take your Exam</li>                   
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Pass your Exam</li>                   
+                                        <li><span class="glyphicon glyphicon-hand-right"></span> Claim your Digital Certificate and promote your achievement</li>                   
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row py-3">
+                    <div class="col-sm-12">
+                        <h3 style="color: #000; font-weight: bold;">Price</h3>
+                        <h4 style="font-size: 160%; font-weight: bold; color: #000;">₹ {{course.price}}<span style="font-size: 60%; font-weight: 400"> (incl. GST)</span></h4>
+                    </div>
+                </div>
+                <hr>
+                <div class="row py-2">
+                    <div class="col-sm-12 text-center">
+                        <a href="{% url 'app:add-to-cart' course.slug %}" class="btn btn-success btn-lg">Become a Certified Professional</a>
+<!--
+                        <br><br>
+                        <a href="{% url 'app:contact' %}" class="btn btn-primary btn-lg">Get In Touch</a>
+-->
+                    </div>
+                </div>
+            </div>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            $(".nav-tabs a").click(function(){
+                $(this).tab('show');
+            });
+        });
+    </script>
+    
+</section>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+<!--
+<section class="faq-page" style="background: #fff;">
+    <div class="container-fluid">
+        <div class="container">
+            
+            <div class="row" style="padding-top: 20px">
+                <div class="col-md-offset-2 col-md-8">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" width="100%" height="auto" src="https://www.youtube.com/embed/h6cf2VkVa8M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row" style="padding-top: 20px">
+                <div class="col-md-12 col-sm-12">
+                    <div class="heading">
+                        <p>What is DOMP Certification?</p>
+                    </div>
+                    <div class="content">
+                        <p>
+                            Drone Operations & Management Professional (DOMP) Certification is provided by Indian Insitute of Drones which sets one of the highest standards for Drone operations in the world giving extreme importance to the flight safety, operating personnel and adherence to regulatory compliance of the region. Companies are recruiting candidates with DOMP Certification with higher salaries compared to others.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="heading">
+                        <p>
+                            DOMP Certificate validates to do the following:
+                        </p>
+                    </div>
+                    <div class="">
+                        <ol>
+                            <li>Drone Operations Management</li>
+                            <li>Flight Data Management</li>
+                            <li>Fleet & Pilots Team Management</li>
+                            <li>Device Maintenance including Firmware Management</li>
+                            <li>Mission Planning</li>
+                            <li>Project Overseeing & Timely Execution</li>
+                            <li>Cloud Data Security & Management</li>
+                            <li>Regulatory Compliance for Drone Operations</li>
+                            <li>Drone Selection for Specific Projects</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="heading">
+                        <p>
+                            Syllabus for DOMP:
+                        </p>
+                    </div>
+                    <div class="">
+                        <ol>
+                            <li>Introduction and Fundamentals of Drone Technology</li>
+                            <li>Components and Electronics in a Multi-Rotor</li>
+                            <li>Drone Markets</li>
+                            <li>RPAS FAQ(Rules and Regulations as per DGCA CAR 1.0)</li>
+                            <li>Drone Project Operations and Management</li>
+                            <li>Aerodynamics of a Drone</li>
+                            <li>Mission Planning, Project Overseeing and Timely Execution</li>
+                            <li>Working of NPNT software</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="heading">
+                        <p>
+                            Qualification to get a DOMP Certification:
+                        </p>
+                    </div>
+                    <div class="">
+                        <ol>
+                            <li>Three-year Graduation in any stream </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="heading">
+                        <p>
+                            How does it work?
+                        </p>
+                    </div>
+                    <div class="">
+                        <ol>
+                            <li>Check your eligibility</li>
+                            <li>Apply online</li>
+                            <li>Submit all relevant documents</li>
+                            <li>Schedule your Exam</li>
+                            <li>Prepare for Exam either by Reference Book or take up online course</li>
+                            <li>Take your Exam</li>
+                            <li>Pass your Exam</li>
+                            <li>Claim your Digital Certificate and promote your achievement</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row" style="">
+                <div class="col-md-12">
+                    <div class="heading">
+                        <p>
+                            Pricing & Duration
+                        </p>
+                    </div>
+                    <div class="">
+                        <ul>
+                            <li>Price: ₹ 3,990</li>
+                            <li>Duration ~ 15 hours</li>
+                            <li>Expiry: 7 days from Date of Payment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row" style="text-align: center; padding-bottom: 30px;">
+                <div class="col-md-12">
+                    <h2 style="font-weight: bold; padding-bottom: 10px">TESTIMONIALS</h2>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" width="100%" height="auto" src="https://www.youtube.com/embed/8moNK4HlXXo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" width="100%" height="auto" src="https://www.youtube.com/embed/tICMa9kxiOw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row" style="padding-bottom: 30px; text-align: center">
+                <a class="btn btn-info btn-lg" href="/add-to-cart/domp">Purchase this course</a>
+            </div>
+            
+        </div>
+    </div>
+</section>
+-->
+
+
+{% endblock %}

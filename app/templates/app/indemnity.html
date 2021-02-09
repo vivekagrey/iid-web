@@ -1,0 +1,45 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<title>Indemnity Bond - Indian Institute of Drones | Military Certified Drone Pilot Instructors</title>
+<meta name="description" content="Indemnity Bond for students who get trained by Indian Institute of Drones.">
+
+<style>
+    
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid univ-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>INDEMNITY BOND</h1>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<section class="indemnity-bond py-4">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p style="font-size: 1.2rem; font-weight: 500">IID takes the signature and left hand thumb impression on Indemnity bond from each student after course completion. Some of the important points mentioned in the bond are stated below:</p>
+                    <ul>
+                       <li>I shall be complying to all the rules and regulations laid down by the Directorate General of Civil Aviation (DGCA), India.</li> 
+                       <li>I shall operate the Drone/ UAV/UA only for specific government requirement projects or if a requirement exists for commercial or personal Drone operation.</li> 
+                       <li>I shall take explicit permission of respective authority before I operate drones anywhere in India</li> 
+                       <li>If any mishaps occur during the operation of drones in India or abroad, Indian Institute of Drones is not responsible for my actions.</li> 
+                       <li>I completely understand that certification given by Indian Institute of Drones is only for training as per guidelines issued by DGCA and is not a licence to operate Drone in India.</li> 
+                       <li>I am responsible for all the action taken by me or my drone while I am involved in any drone operations in India.</li> 
+                    </ul>
+                    <p>Download the Indemnity Bond from <a title="Indemnity Bond" href="{% static 'docs/Indemnity Bond.pdf' %}" target="_blank" rel="noreferrer">here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

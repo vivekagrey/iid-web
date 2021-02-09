@@ -1,0 +1,90 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block extra_head %}
+<title>Training Schedule - Indian Institute of Drones | Best Drone Pilot Training India</title>
+<meta name="keywords" content="drone pilot courses, online drone courses, fixed wing drone pilot training, multirotor drone pilot training">
+<meta name="description" content="Indian Institute of Drones. Become a UAV Pilot. Training Schedule for Drone Pilot Courses. Explore Professional Courses for UAVs/Drones">
+
+<style>
+    .sidebar{
+        background-color: #34495e;
+        display: block;
+        padding: 3% 4%!important;
+    }
+    .sidebar .ques{
+        font-size: 1.8rem;
+        color: #fff;
+    }
+    .head{
+        color: #b9b9b9;
+        font-size: 1.5rem;
+    }
+    .head span{
+        border-bottom: 1px solid #dedede;
+    }
+    .info{
+        color: #fff;
+        font-size: 1.1rem;
+    }
+    @media only screen and (max-device-width: 768px) {
+        .head{font-size: 0.9rem}
+        .info{font-size: 1.2rem}
+        .sidebar{padding: 3% 2%!important;}
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid univ-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>TRAINING SCHEDULE</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="training-schedule">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-sm-8 text-center py-3">
+                    <h2 class="mt-2">Training Schedule for Classroom Courses</h2>
+                    <table class="table table-striped">
+                        <thead>
+                            <th><center>Date</center></th>
+                            <th><center>Course</center></th>
+                            <th><center>Location</center></th>
+                        </thead>
+                        <tbody>
+                            {% for course in calendar %}
+                            <tr>
+                                <td>{{course.date}}</td>
+                                <td>{{course.course_name}}</td>
+                                <td>{{course.location}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <a href="{% url 'app:courses' %}" class="btn btn-success btn-lg" style="margin-top: 5px;">Enroll Now</a>
+                </div>
+                <div class="col-sm-4 sidebar">
+                    <h4 class="ques text-center">
+                        Got Questions?<br>
+                        Get in touch
+                    </h4>
+                    <h4 class="head pt-5"><span>PHONE</span></h4>
+                    <h4 class="info pt-2">+91-8074611720</h4>
+                    <h4 class="head pt-5"><span>EMAIL</span></h4>
+                    <h4 class="info pt-2">director@iiodrones.com</h4>
+                    <h4 class="head pt-5"><span>HEADQUARTERS</span></h4>
+                    <h4 class="info pt-2">WP - 11, Block C, <br>Sector - 71, <br>Noida - 201307</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

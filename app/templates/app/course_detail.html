@@ -1,0 +1,47 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+	<div class="container-fluid navbar-bg">
+<!--added navbar class for white background temporarily-->
+        {{course.title}} <br>
+        <img src="{{course.image.url}}" width="270"><br><br>
+
+        Price : {{course.price}}<br>
+        Duration : {{course.duration}}<br>
+        Description:
+        <ul>
+            {% if course.description1 %}
+            <li>{{course.description1}}</li>
+            {% endif %}
+            {% if course.description2 %}
+            <li>{{course.description2}}</li>
+            {% endif %}
+            {% if course.description3 %}
+            <li>{{course.description3}}</li>
+            {% endif %}
+            {% if course.description4 %}
+            <li>{{course.description4}}</li>
+            {% endif %}
+            {% if course.description5 %}
+            <li>{{course.description5}}</li>
+            {% endif %}
+
+        </ul>
+        <br>
+        ----OTHER COURSE DETAILS----
+        <br><br>
+
+<!--        {% if object in order_items %}-->
+<!--        <a href="{% url 'order-summary' %}" class="btn btn-primary">-->
+<!--          Go to cart-->
+<!--        </a>-->
+<!--        {% else %}-->
+        <a href="{{course.get_add_to_cart_url }}" class="btn btn-primary">
+          Add to cart
+        </a>
+
+
+<!--        {% endif %}-->
+
+    </div>
+{% endblock %}

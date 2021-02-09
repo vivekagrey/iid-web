@@ -1,0 +1,346 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<title>About Us - Indian Institute of Drones | Military Certified Drone Pilot Instructors</title>
+<meta name="keywords" content="drone pilot courses, online drone courses, fixed wing drone pilot training, multirotor drone pilot training">
+<meta name="description" content="About Indian Institute of Drones. Get Certified by Ex - UAV Military Instructors. Become a UAV Pilot.">
+
+<style>
+    .about-header{
+        background-image: linear-gradient(rgba(40, 59, 98, 0.6), rgba(40, 59, 98, 0.6)), url("/static/images/univ-header.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .about-header h1{
+        color: #fff;
+        margin: 80px 0px;
+        font-size: 3rem;
+    }
+    .sidebar{
+        background-color: #34495e;
+        display: block;
+        
+    }
+    .sidebarr{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 80px;
+    }
+    .sidebar ul{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    .sidebar ul li{
+        margin: 25px 50px;
+        border-bottom: 2px solid #d9d9d9;
+    }
+    .sidebar ul li a{
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.6rem;
+        
+    }
+    .sidebar ul li a:hover{
+        color: #ff6830;
+        text-decoration: none;
+    }
+    .headingg{
+        font-size: 2rem;
+        margin-top: 30px;
+        font-weight: 600;
+    }
+    .mission{padding-left: 20px}
+    .mission li {
+        padding: 4px;
+    }
+    .organiz{list-style-type: none;padding: 0}
+    .organiz li{
+        display: inline-block;
+        text-align: center;
+        width: 10rem;
+        padding-top: 4px;
+    }
+    .organiz li img{width: 60%}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid about-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>ABOUT US</h1>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<section class="about-us">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9">
+                    <div>
+                        <h4 class="headingg py-3">Our Company</h4>
+                        <p>
+                        Indian Institute of Drones, with Government, registered Regn No.  4/1267/159/206/67 provides the nation’s highest quality drone training with a simple yet  comprehensive model for enterprise clients, government agencies, public safety  departments, and individuals. 
+                        </p>
+                        <p>
+                            Our highly trained staff has many years of experience in  the aviation industry and also in the drone industry, primarily from the defence  background with certifications from the Ministry of Defence through their respective  wings (Army, Navy or Air Force). This experience is now being extended to the rapidly  growing UAV (Drone) market in the civilian sector. So our students will be certified by  Ex- Military UAV pilot. We also periodically affiliate with various organisations around  the world for creating a better career for our students.
+                        </p>
+                        <p>
+                            It is our intention to offer the required skill set that tick the DGCA boxes as well as  delivering courses that are insightful, fun and above all extend the superior safety and  security record that the Indian Aviation Industry enjoys. 
+                        </p>
+                        <p id="company">
+                            Indian Institute of Drones is a Training wing of Johnnette Technologies Pvt Ltd which is  present in three different locations at Noida/Chennai/Podili which has very good  connectivity. Podili location conducts primarily fixed-wing training and is also our Flight  Test Centre. The training at the institute will be carried out by highly qualified Instructors  having more than 1500 hours of combined flying experience, giving the learners an in-depth  knowledge in unmanned flying and in unmanned systems technologies as per the  DGCA CAR.
+                        </p>
+                    </div>
+                    <div id="vision">
+                        <h4 class="headingg py-3">Vision</h4>
+                        <p>
+                            Indian Institute of Drones strives to enhance the future of the youth with unprecedented standards in interactive teaching and  practical training in the field of unmanned systems technology. We will continue on our endeavours to make a better world.             
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="headingg py-3">Mission</h4>
+                        <ul class="mission">
+                            <li>To impart excellence in Drone technology.</li>
+                            <li>To produce the most competent drone pilots.</li>
+                            <li>To become the best Drone training institute in the world.</li>
+                            <li id="mission">To revolutionize the future of drone industry.</li>
+                            <li>To ingrain the highest flight safety standards in the Drone community.</li>
+                            <li>To teach how to protect life, property, nature and self with Drone technology.</li>
+                        </ul>
+                    </div>
+                    <div id="leadership">
+                        <h4 class="headingg py-3">Leadership</h4>
+                        <div class="row py-2">
+                            <div class="col-sm-3">
+                                <img src="{% static 'images/Instructors/ceo.png' %}" alt="Lt Cdr John Livingstone" width="100%">
+                            </div>
+                            <div class="col-sm-9">
+                                <h4 class="mt-2">Lt Cdr John Livingstone</h4>
+                                <h5>Founder, Trustee, Accountable Manager and Instructor</h5>
+                                <p>
+                                    Lt Cdr John Livingstone (Retd.) is also the Founder CEO & Product Architect of Johnnette Technologies Pvt Ltd. After working as a UAV (Unmanned Aerial Vehicle) External Pilot in the Indian Navy, he ventured into the business world with more than a decade's experience in Unmanned Systems both in the military operations and civilian applications. He is also the first Indian Naval Officer to get First Merit Award at UAV Tettra School, Indian Air Force in 2007.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-sm-3">
+                                <img src="{% static 'images/Instructors/coo.png' %}" alt="Ram Sarath Kumar" width="100%">
+                            </div>
+                            <div class="col-sm-9">
+                                <h4 class="mt-2">G Ram Sarath Kumar</h4>
+                                <h5>COO and CFI (Multirotor)</h5>
+                                <p id="instruc">
+                                    Ram Sarath is our Multi rotor UAV Pilot and Instructor at IID. He is an Aeronautical Engineer having more than 7 years of experience in updating Avionics data to maintain department records and data bases. An effective communicator with exceptional interpersonal skills and hands on experience in Training & Development. He has well expertise in handling the project - client relations in different scenarios and maintaining workflows at Johnnette and IID.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="team">
+                        <h4 class="headingg py-3">Our Team</h4>
+                        <div class="row py-2">
+                            <div class="col-sm-3">
+                                <img src="{% static 'images/Instructors/cyril.png' %}" alt="Cyril Christopher" width="100%">
+                            </div>
+                            <div class="col-sm-9">
+                                <h4 class="mt-2">Cyril Christopher</h4>
+                                <h5>CTO and CFI (Fixed-wing)</h5>
+                                <p>
+                                    Cyril has Masters in Aerospace Engineering from University of Salford, Manchester and is specialized in UAV with 3 years of experience in design, manufacturing and testing techniques. He is our UAV fixed wing pilot as well as a Pilot Instructor at IID. He is also our Aerostructure Designer.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-sm-3">
+                                <img src="{% static 'images/Instructors/srinivasan.png' %}" alt="Srinivasan" width="100%">
+                            </div>
+                            <div class="col-sm-9">
+                                <h4 class="mt-2">Srinivasan</h4>
+                                <h5>Multirotor and Fixed-wing UAV Instructor</h5>
+                                <p>
+                                    Srinivasan is an Aeronautical Engineer with specialization in Research and Development of UAV structures and mechanics with expertise in design and analysis software tools focused to generate high-end sustainable aero models. He is a Fixed-wing and Multirotor UAV pilot as well as UAV Pilot Instructor at IID.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-sm-3">
+                                <img src="{% static 'images/Instructors/vinothkrishnan.png' %}" alt="Vinothkrishnan" width="100%">
+                            </div>
+                            <div class="col-sm-9">
+                                <h4 class="mt-2">Vinothkrishnan</h4>
+                                <h5>Multirotor and Fixed-wing UAV Instructor</h5>
+                                <p>
+                                    Vinothkrishnan is having a Bachelors degree in Aeronautical Engineering from Anna University, Chennai and specializes in UAV design, analysis and testing techniques. He has experience in Aero structure Design and Structural Analysis, possessing a comprehensive knowledge of designing and developing projects of required specification focusing on quality, sustainability and implementing commercial off the shelf-based solutions. He is a Fixed-wing and Multirotor UAV Pilot as well as a UAV Pilot Instructor at IID.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-sm-3">
+                                <img src="{% static 'images/Instructors/abhinav.png' %}" alt="Abhinav Rao Varrey" width="100%">
+                            </div>
+                            <div class="col-sm-9">
+                                <h4 class="mt-2">Abhinav Rao Varrey</h4>
+                                <h5>Multirotor UAV Pilot Instructor</h5>
+                                <p>
+                                    Abhinav Rao Varrey has done his Bachelor of Technology in Mechanical Engineering. With a military family background he has a strong sense of integrity and discipline instilled in him. He is the vital link who bridges our clients and the company. With exceptional Oratory skills, Multi-Tasking in high pressure work environment, Acclimatization to change and Strategic thinking, he brings a lot to the table. He is also a Multi-Rotor Pilot and a Drone Pilot Instructor.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-sm-3">
+                                <img src="{% static 'images/Instructors/achal.png' %}" alt="Achal Singhal" width="100%">
+                            </div>
+                            <div class="col-sm-9">
+                                <h4 class="mt-2">Achal Singhal</h4>
+                                <h5>Multirotor UAV Pilot Instructor</h5>
+                                <p>
+                                    Achal Singhal is an Embedded Systems Engineer. He is an electronics aficionado having 2+ years of experience in embedded circuit board designing & fabrication and training students in robotics. He has good knowledge of assembling and programming UGVs on different platforms. He is a Multi-Rotor UAV Pilot and a drone Pilot Instructor at IID.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-sm-3">
+                                <img src="{% static 'images/Instructors/prashant.png' %}" alt="Prashant Kumar" width="100%">
+                            </div>
+                            <div class="col-sm-9">
+                                <h4 class="mt-2">Prashant Kumar</h4>
+                                <h5>Multirotor UAV and Racer FPV Pilot Instructor</h5>
+                                <p>
+                                    Prashant Kumar holds a Bachelor’s Degree in Computer Science Engineering from AKTU. He has a deep interest in Software Development and has expertise in Artificial Intelligence and Computer Vision. He also has an interest in Unmanned Ground Vehicles and has a good knowledge in different types of control boards. He is a drone pilot Instructor at IID.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-sm-3">
+                                <img src="{% static 'images/Instructors/kunal.png' %}" alt="Kunal Meena" width="100%">
+                            </div>
+                            <div class="col-sm-9">
+                                <h4 class="mt-2">Kunal Meena</h4>
+                                <h5>Multirotor UAV Pilot Instructor</h5>
+                                <p>
+                                    Kunal Meena is an Electronics and communication engineer having expertise in wireless technologies and excellent in designing and implementing customized systems. He has a deep understanding of the fundamental concepts of wireless system technologies, system architecture, systems design and installation of wireless point to point and multipoint systems. He is a Multi-Rotor UAV Pilot and a drone Pilot Instructor at IID.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-sm-3">
+                                <img src="{% static 'images/Instructors/nesar.png' %}" alt="Nesar M N" width="100%">
+                            </div>
+                            <div class="col-sm-9">
+                                <h4 class="mt-2">Nesar M N</h4>
+                                <h5>Multirotor UAV Pilot Instructor</h5>
+                                <p>
+                                    Nesar M N is a mechanical engineer with Masters in Industrial Automation and Robotics from Manipal Institute of Technology. He's been aeromodelling since 14 years and is knowledgeable in the field of manufacturing and fabrication processes. He is capable of creating products using CAD modelling and realizing the product through rapid prototyping using 3D Printing. He is a Multirotor UAV Pilot and drone pilot instructor at IID.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-sm-3">
+                                <img src="{% static 'images/Instructors/vipin.png' %}" alt="Vipin Kumar" width="100%">
+                            </div>
+                            <div class="col-sm-9">
+                                <h4 class="mt-2">Vipin Kumar</h4>
+                                <h5>Multirotor Flying Training Instructor</h5>
+                                <p>
+                                    Vipin Kumar has done his Industrial Training in Electrician Trade and Completed Bachelor’s degree from Chaudhary Charan Singh University Meerut. He is a Multi rotor UAV Pilot and Technical Assistant. He is a dedicated, hardworking and a team player. He has a deep interest in Unmanned Ground Vehicle (UGV) and Unmanned Aerial Vehicle (UAV) Technology. He is a Multi-Rotor UAV Pilot and a drone flying Instructor at IID.
+                                </p>
+                            </div>
+                        </div>
+                        <h4 class="headingg py-3">Franchise/Partner Instructors</h4>
+                        <div class="row py-2">
+                            <div class="col-sm-3">
+                                <img src="{% static 'images/Instructors/sudhir.png' %}" alt="Sudhir" width="100%">
+                            </div>
+                            <div class="col-sm-9">
+                                <h4 class="mt-2">Sudhir</h4>
+                                <h5>Indian Institute of Drones - Hyderabad</h5>
+                                <p>
+                                    Sudhir neerudu is the founder/Director for Drone world technologies pvt ltd, He is a multirotor and fixed wing UAV pilot and instructor in IID and having more than 2 years experience on aerial cinematography and also he is a filmmaker in Telugu film industry.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-sm-3">
+                                <img src="{% static 'images/Instructors/virendra.png' %}" alt="Virendra Panchal" width="100%">
+                            </div>
+                            <div class="col-sm-9">
+                                <h4 class="mt-2">Capt. Virendra Panchal</h4>
+                                <h5>Indian Institute of Drones - Bharuch</h5>
+                                <p>
+                                    Capt. Virendra Panchal A Corporate Pilot holding Commercial Pilot License from DGCA India. Having Flying Experience on Beech Craft B-200 and Beech Craft C-90 Corporate Aircraft. 15+ Years of Experience in Pilot Training for aspiring students to become Commercial Pilot in Different Country. He got his Remotely Piloted Aircraft – Controller Certificate, a Drone Pilot License from Civil Aviation Authority of Philippines - CAAP, an ICAO Member Country as per FAA standard in 2018. 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row py-2">
+                            <div class="col-sm-3">
+                                <img src="{% static 'images/Instructors/shiva.png' %}" alt="Shivakumar H.G." width="100%">
+                            </div>
+                            <div class="col-sm-9">
+                                <h4 class="mt-2">Shivakumar H.G.</h4>
+                                <h5>Indian Institute of Drones - Bangalore</h5>
+                                <p>
+                                    Shivakumar H.G. is Head (Technical and Operations) of Multiplex Drone Pvt Ltd. He has 12 years of experience in the field of design and development of drones with a varying payload capacity from 300 gm to 50 kg. He has worked in prestigious organizations like National Aerospace Laboratories, India, and ASML, Netherlands and gained specialization in structural analysis of aerospace and Unmanned air vehicle components.
+                                </p>
+                            </div>
+                        </div>
+                        <h4 class="headingg py-3">International Centers' Instructors</h4>
+                        <div class="row py-2">
+                            <div class="col-sm-3">
+                                <img src="{% static 'images/Instructors/mosabbah.png' %}" alt="Mosabbah Almesmari" width="100%">
+                            </div>
+                            <div class="col-sm-9">
+                                <h4 class="mt-2">Mosabbah Almesmari</h4>
+                                <h5>Indian Institute of Drones - Fujairah, UAE</h5>
+                                <p id="clients">
+                                    Mr. Mosabbah Obaid al Mesmari is the Founder and Chief Executive Officer (CEO) of Melaaha Drones, a start up Drone service provider.  Mr. Mosabbah completed his Bachelors in Computer Engineering from Boston University (USA) in the year 1983, and his Master’s degree in IT Security from the University of London in 2007. He has worked in the public security  field for more than 26 years. He retired as a Colonel in 2005. He is fluent and well-versed in Arabic and English.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="" class="pb-3">
+                        <h4 class="headingg py-3">Our Esteemed Clients</h4>
+                        <h6>We always strive to provide world-class service, and are humbled to have trained clients from the following companies.</h6>
+                        <ul class="organiz text-center">
+                            <li><img class="org-logo-img" src="{% static 'images/Organizations/drdo-logo.jpg' %}" alt="DRDO Logo"></li>
+                            <li><img class="org-logo-img" src="{% static 'images/Organizations/assam-rifles-logo.jpg' %}" alt="Assam Rifles"></li>
+                            <li><img class="org-logo-img" src="{% static 'images/Organizations/dgca-logo.jpg' %}" alt="DGCA Logo"></li>
+                            <li><img class="org-logo-img" src="{% static 'images/Organizations/army-logo.jpg' %}" alt="Indian Army Logo"></li>
+                            <li><img class="org-logo-img" src="{% static 'images/Organizations/ap-logo.jpg' %}" alt="AP Police Logo"></li>
+                            <li><img class="org-logo-img" src="{% static 'images/Organizations/csir-logo.jpg' %}" alt="CSIR Logo"></li>
+                            <li><img class="org-logo-img" src="{% static 'images/Organizations/iitm-logo.jpg' %}" alt="IITM Logo"></li>
+                            <li><img class="org-logo-img" src="{% static 'images/Organizations/sony-logo.jpg' %}" alt="Sony Logo"></li>
+                            <li><img class="org-logo-img" src="{% static 'images/Organizations/dell-logo.jpg' %}" alt="Dell Logo"></li>
+                            <li><img class="org-logo-img" src="{% static 'images/Organizations/reliance-logo.jpg' %}" alt="Reliance Logo"></li>
+                            <li><img class="org-logo-img" src="{% static 'images/Organizations/geosys-logo.jpg' %}" alt="GeoSys Logo"></li>
+                            <li><img class="org-logo-img" src="{% static 'images/Organizations/greenko-logo.jpg' %}" alt="Greenko Logo"></li>
+                            <li><img class="org-logo-img" src="{% static 'images/Organizations/tata-logo.jpg' %}" alt="Tata Power Logo"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3 sidebar">
+                    <div class="sidebarr">
+                        <div class="py-4">
+                            <ul class="sidebarrr">
+                                <li><a href="#">Company</a></li>
+                                <li><a href="#company">Vision</a></li>
+                                <li><a href="#vision">Mission</a></li>
+                                <li><a href="#mission">Leadership</a></li>
+                                <li><a href="#instruc">Our Team</a></li>
+                                <li><a href="#clients">Our Clients</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

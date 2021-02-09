@@ -1,0 +1,85 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    </head>
+    
+    <style>
+        td {
+            border: none !important;
+        }
+    </style>
+    
+    <body>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row" style="margin-bottom: 20px">
+                    <div class="col-xs-12">
+                        <center><img src="{% static 'images/Logo/IID_logo1.jpg' %}" alt="IID Logo" width="20%"></center>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="contact-info" style="font-size: 18px;">
+                        <center>
+                            Indian Institute of Drones
+                            <hr style="margin: 0;">
+                        </center>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="invoice-title">
+                            <h2><center><b>RECEIPT</b></center></h2>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <center><table class="table">                            
+                            <tbody>
+                                <tr>
+                                    <td style="width: 40%">Name</td>
+                                    <td style="width: 60%">{{username}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 40%">Phone</td>
+                                    <td style="width: 60%">{{user_phone}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 40%">Email</td>
+                                    <td style="width: 60%">{{user_email}}</td>
+                                </tr>
+                            </tbody>
+                        </table></center>
+                        <hr>
+                        <center><table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 20%">S. No.</th>
+                                    <th style="width: 50%">Description</th>
+                                    <th style="width: 30%">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in order_items %}
+
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ item.item.title }}</td>
+                                    <td>Rs. {{ item.item.price }}</td>
+                                </tr>
+                                {% endfor %}                                
+                            </tbody>
+                        </table></center>
+                        <h5 style="text-align: center; margin-top: 20px;">Total Amount Paid : Rs. {{ total_amt }}</h5>
+                        <br><br><hr>
+                        <p style="margin-top: 100px;">
+                            Note: This is a computer generated receipt for the transaction done.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,127 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block extra_head %}
+<title>DGCA Rules for Drone Pilot Training in India - Indian Institute of Drones | DGCA UAV Regulations</title>
+<meta name="keywords" content="DGCA UAS Rules 2020, DGCA UAV Regulations, DGCA CAR for UAV, Drone Pilot Regulations in India">
+<meta name="description" content="DGCA Regulations for UAV/Drones. Indian Institute of Drones. Get Certified by Ex - UAV Military Instructors. Become a UAV Pilot.">
+
+<style>
+    .dgca-excerpt p{
+    font-weight: 400;
+    font-size: 110%;
+    line-height: 1.8;
+}
+    .pdf-lnk{
+        padding: 10px 0px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid univ-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>DGCA</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="dgca-page">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row dgca-excerpt">
+                <p style="font-size: 130%;">
+                    <b>The draft regulations from DGCA state the requirements for training for drone operators. Extract from the same relating to training is as under:</b>
+                </p>
+                <p>
+                    <b>9. REMOTE PILOT TRAINING REQUIREMENTS </b><br>
+                </p>
+                <p>
+                    9.1 Remote pilot shall have attained 18 years of age, having passed 10th exam in English, and undergone       ground/ practical training.<br>
+                </p>
+                <p>
+                    9.2 The ground training shall be obtained at any DGCA approved Flying Training Organization (FTO), and   include the following theory subjects:<br>
+                    a) Basic Radio Telephony (RT) techniques including knowledge of radio frequencies.<br>
+                    b) Flight Planning and ATC procedures.<br>
+                    c) Regulations specific to area of operations.<br>
+                    d) Basic knowledge of principles of flight and aerodynamics for fixed wing, rotary wing, and hybrid aircraft.<br>
+                    e) Airspace Structure and Airspace Restrictions with knowledge of No Drone Zones<br>
+                    f) Basic Aviation Meteorology.<br>
+                </p>
+                <p>
+                    9.3 The practical training shall comprise of RPA in flight having live component, and/ or simulated flight   training to demonstrate control of RPA throughout its operating conditions, including safe recovery during   emergencies and system malfunction. Minimum syllabus and curriculum for training capsule for Remote Pilot   is given at Annexure-IX.<br>
+                </p>
+                <p>
+                    9.4 The requirements contained in Para 9.1 through 9.3 of this CAR are not applicable for Nano and Micro   category RPA pilots intending to operate in uncontrolled airspace. However, the owner and user shall be fully   aware of responsibilities for all aspects of flight safety during such operations.
+                    
+                </p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 pdf-lnk" style="text-align: center">
+                    <a href="{% static 'docs/RPTO.pdf' %}" target="_blank">
+                        <img src="{% static 'images/Icons/pdf-icon.png' %}" alt="PDF Icon">
+                        <h5>Approval for RPTO</h5></a>
+                </div>
+                <div class="col-md-4 pdf-lnk" style="text-align: center">
+                    <a href="{% static 'docs/FTC3 2020.pdf' %}" target="_blank">
+                        <img src="{% static 'images/Icons/pdf-icon.png' %}" alt="PDF Icon">
+                        <h5>Flying Training Circular 3 - 2020</h5></a>
+                </div>
+                <div class="col-md-4 pdf-lnk" style="text-align: center">
+                    <a href="{% static 'docs/QCI.pdf' %}" target="_blank">
+                        <img src="{% static 'images/Icons/pdf-icon.png' %}" alt="PDF Icon">
+                        <h5>New RPAS Certification Scheme (QCI)</h5></a>
+                </div>
+                <div class="col-md-4 pdf-lnk" style="text-align: center">
+                    <a href="{% static 'docs/CAR 1.pdf' %}" target="_blank">
+                        <img src="{% static 'images/Icons/pdf-icon.png' %}" alt="PDF Icon">
+                        <h5>DGCA Regulations (CAR)</h5></a>
+                </div>
+                <div class="col-md-4 pdf-lnk" style="text-align: center">
+                    <a href="{% static 'docs/DGCA RPAS Guidance Manual.pdf' %}" target="_blank">
+                        <img src="{% static 'images/Icons/pdf-icon.png' %}" alt="PDF Icon">
+                        <h5>DGCA RPAS Guidelines</h5></a> 
+                </div>
+                <div class="col-md-4 pdf-lnk" style="text-align: center">
+                    <a href="{% static 'docs/Draft_UAS_Rules_2020.pdf' %}" target="_blank">
+                        <img src="{% static 'images/Icons/pdf-icon.png' %}" alt="PDF Icon">
+                        <h5>DGCA UAS Rules 2020 (DRAFT)</h5></a> 
+                </div>
+                <div class="col-md-4 pdf-lnk" style="text-align: center">
+                    <a href="{% static 'docs/FTC2 2020.pdf' %}" target="_blank">
+                        <img src="{% static 'images/Icons/pdf-icon.png' %}" alt="PDF Icon">
+                        <h5>Flying Training Circular 2 - 2020</h5></a> 
+                </div>
+                <div class="col-md-4 pdf-lnk" style="text-align: center">
+                    <a href="{% static 'docs/BVLOS Exemption.pdf' %}" target="_blank">
+                        <img src="{% static 'images/Icons/pdf-icon.png' %}" alt="PDF Icon">
+                        <h5>BVLOS Exemption Notification</h5></a> 
+                </div>
+                <div class="col-md-4 pdf-lnk" style="text-align: center">
+                    <a href="{% static 'docs/RPAS Dos and Donts.pdf' %}" target="_blank">
+                        <img src="{% static 'images/Icons/pdf-icon.png' %}" alt="PDF Icon">
+                        <h5>RPAS Do's and Don'ts</h5></a> 
+                </div>
+                <div class="col-md-4 pdf-lnk" style="text-align: center">
+                    <a href="{% static 'docs/FTC1 2019.pdf' %}" target="_blank">
+                        <img src="{% static 'images/Icons/pdf-icon.png' %}" alt="PDF Icon">
+                        <h5>Flying Training Circular 1 - 2019</h5></a> 
+                </div>
+                <div class="col-md-4 pdf-lnk" style="text-align: center">
+                    <a href="{% static 'docs/Aircraft Act, 1934.pdf' %}" target="_blank">
+                        <img src="{% static 'images/Icons/pdf-icon.png' %}" alt="PDF Icon">
+                        <h5>The Aircraft Act, 1934</h5></a> 
+                </div>
+                <div class="col-md-4 pdf-lnk" style="text-align: center">
+                    <a href="{% static 'docs/Rule 160 - Aircraft Rules, 1937.pdf' %}" target="_blank">
+                        <img src="{% static 'images/Icons/pdf-icon.png' %}" alt="PDF Icon">
+                        <h5>Rule 160 - Aircraft Rules, 1937</h5></a> 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

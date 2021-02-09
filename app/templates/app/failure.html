@@ -1,0 +1,81 @@
+{% load static %}
+
+<style>
+    body{
+        background-color: #fff;
+    }
+    
+    .fail-text {
+        text-align: center;
+        color: red;
+    }
+
+    .textt {
+        text-align: center;
+    }
+
+</style>
+
+<html>
+    <head>
+        <title>Transaction Failed</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="apple-touch-icon" sizes="57x57" href="{% static 'images/favicon/apple-icon-57x57.png' %}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{% static 'images/favicon/apple-icon-60x60.png' %}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/favicon/apple-icon-72x72.png' %}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{% static 'images/favicon/apple-icon-76x76.png' %}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/favicon/apple-icon-114x114.png' %}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{% static 'images/favicon/apple-icon-120x120.png' %}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{% static 'images/favicon/apple-icon-144x144.png' %}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{% static 'images/favicon/apple-icon-152x152.png' %}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-icon-180x180.png' %}">
+        <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'images/favicon/android-icon-192x192.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{% static 'images/favicon/favicon-96x96.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static 'images/favicon/manifest.json' %}">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="{% static 'images/favicon/ms-icon-144x144.png' %}">
+        <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+
+    <div style="display:none">
+        <input type="hidden" name="csrfmiddlewaretoken" value="{% csrf_token %}">
+    </div>
+    
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="" style="text-align: center; padding-top: 50px">
+                    <img src="{% static 'images/Logo/IID_logo.jpg' %}" alt="IID Logo" width="20%">
+                </div>
+            </div>
+            <div class="row" style="padding-top: 50px">
+                <div class="container">
+                    <h4 class="fail-text"><b>Transaction Failed!</b></h4>
+                    <h4 class="textt">Order Status: <b>{{ status }}</b></h4>
+                    <h4 class="textt">Transaction ID: <b>{{ txnid }}</b></h4>
+                    
+                    <br>
+                    <br>
+                    <p style="text-align: center">Use the transaction ID mentioned above for any support query.</p>
+                    <p style="text-align: center">If the amount was deducted from your account, please contact your bank.</p>
+                    <br>
+                    <p style="text-align: center; font-size: 20px"><a href="{% url 'app:home' %}">Click here</a> to go back to homepage</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

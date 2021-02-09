@@ -1,0 +1,108 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block extra_head %}
+<title>Pilot List - Indian Institute of Drones | Drone Pilot Training India</title>
+<meta name="keywords" content="drone pilot courses, online drone courses, fixed wing drone pilot training, multirotor drone pilot training">
+<meta name="description" content="Pilot list of Indian Institute of Drones. Get Certified by Ex - UAV Military Instructors. Become a UAV Pilot.">
+{% endblock %}
+
+{% block content %}
+<style>
+    #myInput {
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        color:black;
+    }
+    
+    @media only screen and (max-device-width: 480px){
+        .pilot_list .container-fluid{
+            padding: 0px 2px!important;
+        }
+        .pilot_list .col-sm-12{
+            padding: 0px 1px!important;
+        }
+        .pilot_list th,
+        .pilot_list td{
+            padding: 10px 5px!important;
+        }
+        .pilot_list{
+            font-size: 70%
+        }
+    }
+</style>
+
+<div class="container-fluid univ-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>PILOT LIST</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="pilot_list my-3">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <input type="text" style="color:black" id="myInput" onkeyup="myFunction()" placeholder="Search for a pilot name..." title="Type a name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table table-striped" id="myTable">
+                        <thead>
+                            <th>Name</th>
+                            <th>Organization</th>
+                            <th>Date</th>
+                            <th>Course Name</th>
+                            <th>Certificate No.</th>
+                        </thead>
+                        <tbody>
+                            {% for pilot in pilots %}
+                            <tr>
+                                <td>{{pilot.name}}</td>
+                                <td>{{pilot.organization}}</td>
+                                <td>{{pilot.date}}</td>
+                                <td>{{pilot.course}}</td>
+                                <td>{{pilot.certificate_no}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            td1 = tr[i].getElementsByTagName("td")[5];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                    } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+{% endblock %}

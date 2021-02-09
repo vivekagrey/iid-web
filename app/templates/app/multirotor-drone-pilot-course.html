@@ -1,0 +1,636 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block extra_head %}
+<title>Multirotor Drone Pilot Training in India - Indian Institute of Drones | Best Drone Pilot Training Institute</title>
+<meta name="keywords" content="Multirotor Drone Pilot Training, Drone Pilot Training, Micro Category Drone Pilot Training, DGCA Approved Drone Training">
+<meta name="description" content="Multirotor Pilot Training Course by Indian Institute of Drones. Get Certified by Ex - UAV Military Instructors. Become a UAV Pilot.">
+
+<style>
+     .page-header{
+         background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url("/static/images/Courses/multirotor-basic-header.jpg");
+         background-position: center;
+         background-size: cover;
+         background-repeat: no-repeat;
+         color: #fff;
+    }
+    .page-header h1{
+        color: #fff;
+        margin: 30px 0px 70px;
+        font-size: 3rem;
+    }
+    .page-header h4{
+        font-size: 1rem;
+    }
+    .page-header h5{
+        font-size: 2.5rem
+    }
+    .div-cta{margin: 30px 0px 30px}
+    .page-header a{
+        text-decoration: none;
+        color: #ff6830;
+        font-size: 1.7rem;
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+    .page-header a:hover{text-decoration: none;color: #fff}
+    .org-logo ul{
+        list-style-type: none;
+        padding: 0;
+    }
+    .org-logo ul li{
+        display: inline-block;
+        padding: 4px 5px;
+    }
+    .org-logo-img{width: 5vw;}
+    .stat-num{
+        font-size: 1.5rem;
+        display: inline-block;
+        padding-right: 5px;
+        color: #ff6830;
+    }
+    .stat-text{
+        display: inline-block;
+        font-size: 1.5rem;
+    }
+    .num{
+        display: inline-block;
+        margin-right: 0.25rem;
+        font-weight: 900;
+        line-height: 1;
+        font-size: 3.5rem;
+    }
+    .txt{
+        text-transform: uppercase;
+        font-weight: 300;
+        display: inline-block;
+        line-height: 1.2;
+    }
+    .accordian-card{
+        border: none!important;
+    }
+    .accordian-header{
+        background-color: #fff!important;
+        border-bottom: none!important;
+    }
+    .accordian-header:hover{
+        background-color: rgba(68, 205, 255, 0.19)!important;
+    }
+    .accordian-header a{
+        font-weight: 300;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: #ff6830;
+    }
+    .accordian-header a i{
+        color:#000!important;
+        padding-right: 15px;
+    }
+    .accordian-header a[aria-expanded=true] .fa-chevron-circle-right{display: none}
+    .accordian-header a[aria-expanded=false] .fa-chevron-circle-down{display: none}
+    .dayy{
+        background-color: rgba(40, 59, 98, 0.9);
+        padding: 0px 9px;
+        border-radius: 4px;
+        color: #fff;
+        font-weight: 400;
+    }
+    .strongg{
+        padding-left: 45px;
+        margin: 0;
+        font-weight: 500;
+    }
+    .curriculumm h5{font-weight: 400}
+    .curriculumm ul{
+        padding-left: 30px;
+    }
+    .curriculumm ul li{
+        font-size: 0.9rem;
+        padding: 4px 0px;
+    }
+    .benefitss-container{
+        background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.86)), url("/static/images/Courses/benefits-bg.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat
+    }
+    .benefitss{
+        max-width: 600px;
+        border: 3px solid #283B62;
+    }
+    .benefitss ul{
+        list-style-type: none;
+        padding-left: 20px;
+        margin: 20px 0;
+    }
+    .benefitss ul li{
+        padding: 7px 0px;
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+    .benefitss ul li i{
+        padding-right: 10px;
+    }
+    .accordian-faq{}
+    .accordian-faq .card{
+        border: none!important;
+    }
+    .accordian-faq .card-header{
+        background-color: #fff;
+        border-bottom: 1px solid #000!important;
+    }
+    .accordian-faq a[aria-expanded=false] .fa-chevron-circle-up{display: none}
+    .accordian-faq a[aria-expanded=true] .fa-chevron-circle-down{display: none}
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="course-detail-page">
+    <div class="container-fluid page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h1>{{course.title}}</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4>Passionate about flying drones but lack knowledge?</h4>
+                    <h5>Don't Worry! We'll help you fly drones confidently.</h5>
+                    <p class="my-4">Walk away with the skills to become a safe drone pilot in our four day Multirotor Drone Pilot course taught by our expert instructors.</p>
+                    <div class="text-center div-cta"><a href="#course-curriculum">View Curriculum</a></div>
+                </div>
+            </div>   
+        </div>
+    </div>
+    
+    <div class="container-fluid py-2 organization-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 text-center py-3">
+                    <h4 style="font-size: 1.2rem; padding-bottom: 10px">Organizations who trust us:</h4>
+                    <div class="text-center org-logo">
+                        <ul>
+                            <li><img class="org-logo-img" src="{% static 'images/Organizations/drdo-logo.jpg' %}" alt="DRDO Logo"></li>
+                            <li><img class="org-logo-img" src="{% static 'images/Organizations/dell-logo.jpg' %}" alt="Dell Logo"></li>
+                            <li><img class="org-logo-img" src="{% static 'images/Organizations/army-logo.jpg' %}" alt="Indian Army Logo"></li>
+                            <li><img class="org-logo-img" src="{% static 'images/Organizations/csir-logo.jpg' %}" alt="CSIR Logo"></li>
+                            <li><img class="org-logo-img" src="{% static 'images/Organizations/iitm-logo.jpg' %}" alt="IITM Logo"></li>
+                        </ul>
+                    </div>
+                    <div class="text-center org-logo">
+                        <ul>
+                            <li><img class="org-logo-img" src="{% static 'images/Organizations/sony-logo.jpg' %}" alt="Sony Logo"></li>
+                            <li><img class="org-logo-img" src="{% static 'images/Organizations/greenko-logo.jpg' %}" alt="Greenko Logo"></li>
+                            <li><img class="org-logo-img" src="{% static 'images/Organizations/geosys-logo.jpg' %}" alt="Geosys Logo"></li>
+                            <li><img class="org-logo-img" src="{% static 'images/Organizations/reliance-logo.jpg' %}" alt="Reliance Logo"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-center">
+                        <div id="organizations" class="carousel slide" data-ride="carousel">
+                            <ul class="carousel-indicators">
+                                <li data-target="#organizations" data-slide-to="0" class="active" style="background-color: #000;"></li>
+                                <li data-target="#organizations" data-slide-to="1" style="background-color: #000;"></li>
+                                <li data-target="#organizations" data-slide-to="2" style="background-color: #000;"></li>
+                                <li data-target="#organizations" data-slide-to="3" style="background-color: #000;"></li>
+                                <li data-target="#organizations" data-slide-to="4" style="background-color: #000;"></li>
+                            </ul>
+                            
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="{% static 'images/Courses/course-page-org1.jpg' %}" alt="Organizations Trained by Indian Institute of Drones" width="100%" height="auto">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="{% static 'images/Courses/course-page-org2.jpg' %}" alt="Organizations Trained by Indian Institute of Drones" width="100%" height="auto">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="{% static 'images/Courses/course-page-org3.jpg' %}" alt="Organizations Trained by Indian Institute of Drones" width="100%" height="auto">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="{% static 'images/Courses/course-page-org4.jpg' %}" alt="Organizations Trained by Indian Institute of Drones" width="100%" height="auto">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="{% static 'images/Courses/course-page-org5.jpg' %}" alt="Organizations Trained by Indian Institute of Drones" width="100%" height="auto">
+                                </div>
+                            </div>
+                            
+                            <a class="carousel-control-prev" href="#organizations" data-slide="prev">
+                                <i class="fas fa-arrow-circle-left" style="color: rgba(0, 0, 0, 0.5);"></i>
+                            </a>
+                            <a class="carousel-control-next" href="#organizations" data-slide="next">
+                                <i class="fas fa-arrow-circle-right" style="color: rgba(0, 0, 0, 0.5);"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid py-3 highlights-container" id="course-curriculum">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h4>
+                        <span class="num">4</span>
+                        <span class="txt">Days of<br>Training</span>
+                    </h4>
+                </div>
+                <div class="col-sm-3">
+                    <h4>
+                        <span class="num"><span style="font-size: 25%">Up to </span>2</span>
+                        <span class="txt">Kg Weight<br>Category</span>
+                    </h4>
+                </div>
+                <div class="col-sm-3">
+                    <h4>
+                        <span class="num">10</span>
+                        <span class="txt">Topics in<br>Curriculum</span>
+                    </h4>
+                </div>
+                <div class="col-sm-3">
+                    <h4>
+                        <span class="num">2k</span>
+                        <span class="txt">Pilots<br>Trained</span>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid py-3 curriculum-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h3 style="font-weight: 700; font-size: 2rem">Curriculum Designed as Per<br>DGCA Guidelines</h3>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container" style="max-width: 400px;">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="accordion">
+                        <div class="card accordian-card">
+                            <div class="card-header accordian-header">
+                                <a class="collapsed card-link stretched-link" data-toggle="collapse" href="#collapse1" aria-expanded="false">
+                                    <i class="fas fa-chevron-circle-right"></i><i class="fas fa-chevron-circle-down"></i> Day <span class="dayy">01</span>
+                                </a>
+                                <p class="strongg">Introduction to Multirotor Drones, DGCA Regulations</p>
+                            </div>
+                            <div id="collapse1" class="collapse" data-parent="#accordion">
+                                <div class="card-body curriculumm">
+                                    <h5>Regulations of DGCA</h5>
+                                    <ul>
+                                        <li>Classification</li>
+                                        <li>Salient points</li>
+                                        <li>Do’s and Don’ts</li>
+                                    </ul>
+                                    <h5>Basic Principles of Flight</h5>
+                                    <ul>
+                                        <li>Fundamentals of flight Aerodynamics</li>
+                                        <li>Take-off, Flight and Landing</li>
+                                        <li>Manuevers, Turns and Patterns</li>
+                                        <li>Advantages/Disadvantages of Multirotor Drones</li>
+                                    </ul>
+                                    <h5>Multirotor Introduction</h5>
+                                    <ul>
+                                        <li>Basic Drone Terminology</li>
+                                        <li>Types of Drones</li>
+                                        <li>Electronic Components in a Multirotor</li>
+                                    </ul>
+                                    <h5>Drone Equipment Maintenance</h5>
+                                    <ul>
+                                        <li>Maintenance of drone, flight control box, ground station</li>
+                                        <li>Maintenance of ground equipments, batteries and payload</li>
+                                        <li>Schedules servicing, repair of equipment</li>
+                                        <li>Fault finding and rectification</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card accordian-card">
+                            <div class="card-header accordian-header">
+                                <a class="collapsed card-link stretched-link" data-toggle="collapse" href="#collapse2" aria-expanded="false">
+                                    <i class="fas fa-chevron-circle-right"></i><i class="fas fa-chevron-circle-down"></i> Day <span class="dayy">02</span>
+                                </a>
+                                <p class="strongg">Introduction to Flight Simulator Training</p>
+                            </div>
+                            <div id="collapse2" class="collapse" data-parent="#accordion">
+                                <div class="card-body curriculumm">
+                                    <h5>Final Test</h5>
+                                    <ul>
+                                        <li>Theoretical Test</li>
+                                    </ul>
+                                    <h5>Introduction to Flight Simulator</h5>
+                                    <ul>
+                                        <li>Basic Operating Features</li>
+                                        <li>Selecting aircrafts and aerodromes</li>
+                                        <li>Demo flight</li>
+                                    </ul>
+                                    <h5>Flight Simulator Training</h5>
+                                    <ul>
+                                        <li>Pre-flight checks and start-up</li>
+                                        <li>Preparation cum coordination for flight</li>
+                                        <li>Take-off and flight stage</li>
+                                        <li>Approach and landing</li>
+                                        <li>Post-flight checks</li>                                 
+                                    </ul>
+                                    <h5>Field Flying Session</h5>
+                                    <ul>
+                                        <li>Practical Flying with Instructor</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card accordian-card">
+                            <div class="card-header accordian-header">
+                                <a class="collapsed card-link stretched-link" data-toggle="collapse" href="#collapse3" aria-expanded="false">
+                                    <i class="fas fa-chevron-circle-right"></i><i class="fas fa-chevron-circle-down"></i> Day <span class="dayy">03</span>
+                                </a>
+                                <p class="strongg">Important Parts and Components in a Multirotor</p>
+                            </div>
+                            <div id="collapse3" class="collapse" data-parent="#accordion">
+                                <div class="card-body curriculumm">
+                                    <h5>Drone Assembling</h5>
+                                    <ul>
+                                        <li>Identification of each component in a Multirotor</li>
+                                        <li>Assembling and calibrating a Multirotor</li>
+                                    </ul>
+                                    <h5>Field Flying Session</h5>
+                                    <ul>
+                                        <li>Practical Flying with Instructor</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card accordian-card">
+                            <div class="card-header accordian-header">
+                                <a class="collapsed card-link stretched-link" data-toggle="collapse" href="#collapse4" aria-expanded="false">
+                                    <i class="fas fa-chevron-circle-right"></i><i class="fas fa-chevron-circle-down"></i> Day <span class="dayy">04</span>
+                                </a>
+                                <p class="strongg">Field Flying Sessions with the Experts</p>
+                            </div>
+                            <div id="collapse4" class="collapse" data-parent="#accordion">
+                                <div class="card-body curriculumm">
+                                    <h5>Field Flying Session</h5>
+                                    <ul>
+                                        <li>Practical Flying with Instructor</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid py-3 maps-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center py-2">
+                    <h3 style="font-weight: 700; font-size: 2rem">Find A Training Center Near You</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1E1KhfpgOlHZc63BlHAF5J2ek1vK-hrz2" width="100%" height="350px"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid py-3 benefitss-container">
+        <div class="container benefitss" style="max-width: 600px">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5 class="text-center my-4" style="font-size: 1.6rem">Why Should You Do This Course?</h5>
+                    <ul>
+                        <li><i class="far fa-hand-point-right"></i>Learn where to fly and how to fly legally</li>
+                        <li><i class="far fa-hand-point-right"></i>Get trained from certified and expert instructors</li>
+                        <li><i class="far fa-hand-point-right"></i>Perfect Course for First Time Flyers</li>
+                        <li><i class="far fa-hand-point-right"></i>You already fly but want to improve your skills and knowledge</li>
+                        <li><i class="far fa-hand-point-right"></i>Learn Emergency Procedures</li>
+                        <li><i class="far fa-hand-point-right"></i>Want to take full advantage of the equipement in hand</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center pt-3">
+                    <p style="font-size: 1rem;">Course fee: <span style="font-size: 1.3rem"><b>₹{{course.price}}</b></span> <span style="font-size: 0.8rem">(incl. GST)</span></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center pb-3">
+                    <a class="btn btn-success" href="{% url 'app:add-to-cart' course.slug %}">SIGN ME UP!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid py-3 faq-container">
+        <div class="container" style="max-width: 900px">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5 class="text-center py-2" style="font-size: 2rem">Frequently Asked Questions</h5>
+                    <div id="accordion2" class="accordian-faq">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="collapsed card-link" data-toggle="collapse" href="#collapse21" aria-expanded="false">
+                                    Who can do this training?<span class="float-right"><i class="fas fa-chevron-circle-up"></i><i class="fas fa-chevron-circle-down"></i></span>
+                                </a>
+                            </div>
+                            <div id="collapse21" class="collapse" data-parent="#accordion2">
+                                <div class="card-body">
+                                    <p>Individuals who are seeking to complete their operators certificate and have already done the Private Pilots License (PPL) component. Also, Military personnel interested in obtaining training on Militray UAVs related to their respective Defence Force can take this training.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="collapsed card-link stretched-link" data-toggle="collapse" href="#collapse22" aria-expanded="false">
+                                    I am new to drones. Is this course too advanced?<span class="float-right"><i class="fas fa-chevron-circle-up"></i><i class="fas fa-chevron-circle-down"></i></span>
+                                </a>
+                            </div>
+                            <div id="collapse22" class="collapse" data-parent="#accordion2">
+                                <div class="card-body">
+                                    <p>Many students that complete our Multirotor Drone Pilot course are brand new to drones and flying for the first time in the class. The course starts with the basics for beginners, but also gets great reviews from advanced drone pilots.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="collapsed card-link stretched-link" data-toggle="collapse" href="#collapse23" aria-expanded="false">
+                                    What if I don't have a drone of my own?<span class="float-right"><i class="fas fa-chevron-circle-up"></i><i class="fas fa-chevron-circle-down"></i></span>
+                                </a>
+                            </div>
+                            <div id="collapse23" class="collapse" data-parent="#accordion2">
+                                <div class="card-body">
+                                    <p>No problem! We will be using our own drones to train you for the course.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="collapsed card-link stretched-link" data-toggle="collapse" href="#collapse24" aria-expanded="false">
+                                    Does the course include field or practical flying sessions?<span class="float-right"><i class="fas fa-chevron-circle-up"></i><i class="fas fa-chevron-circle-down"></i></span>
+                                </a>
+                            </div>
+                            <div id="collapse24" class="collapse" data-parent="#accordion2">
+                                <div class="card-body">
+                                    <p>Yes! The course consitutes both, indoor and outdoor training. The field sessions are followed by classroom sessions.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="collapsed card-link stretched-link" data-toggle="collapse" href="#collapse25" aria-expanded="false">
+                                    What do I need to bring on the training day?<span class="float-right"><i class="fas fa-chevron-circle-up"></i><i class="fas fa-chevron-circle-down"></i></span>
+                                </a>
+                            </div>
+                            <div id="collapse25" class="collapse" data-parent="#accordion2">
+                                <div class="card-body">
+                                    <p>As part of the pre training pack a list will be provided to you of what you should bring on the day. But in short you will need to bring your UAV & batteries (optional), hat, sunglasses (if you wear them).</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="collapsed card-link stretched-link" data-toggle="collapse" href="#collapse26" aria-expanded="false">
+                                    Can I bring my own drone?<span class="float-right"><i class="fas fa-chevron-circle-up"></i><i class="fas fa-chevron-circle-down"></i></span>
+                                </a>
+                            </div>
+                            <div id="collapse26" class="collapse" data-parent="#accordion2">
+                                <div class="card-body">
+                                    <p>Yes, you can bring your drone for the course.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="collapsed card-link stretched-link" data-toggle="collapse" href="#collapse27" aria-expanded="false">
+                                    What is the typical class size?<span class="float-right"><i class="fas fa-chevron-circle-up"></i><i class="fas fa-chevron-circle-down"></i></span>
+                                </a>
+                            </div>
+                            <div id="collapse27" class="collapse" data-parent="#accordion2">
+                                <div class="card-body">
+                                    <p>We keep our courses small and limit the course to 6 students.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="collapsed card-link stretched-link" data-toggle="collapse" href="#collapse28" aria-expanded="false">
+                                    What is the refund policy if I change my mind?<span class="float-right"><i class="fas fa-chevron-circle-up"></i><i class="fas fa-chevron-circle-down"></i></span>
+                                </a>
+                            </div>
+                            <div id="collapse28" class="collapse" data-parent="#accordion2">
+                                <div class="card-body">
+                                    <p>Please refer to our Refund Policy for details related to refund.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid py-5">
+        <div class="container" style="max-width: 700px">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="contact-form-heading">
+                        <h5 class="text-center">
+                            <span style="font-size: 2rem">Got Questions?</span><br>
+                            <a href="tel:+918074611720" style="font-size: 2rem; color: #009016; text-decoration: none">Talk to an Expert!</a><br><br>
+                            or<br><br>
+                            <span style="font-size: 1.8rem">Fill Out the Form</span>
+                        </h5>
+                    </div>
+                    <div class="contact-form-content">
+                        <div class="contact-form-main">
+                            <form method="POST" class="">
+                            {% csrf_token %}
+                            <div class="contact-form-fields">
+                                <div class="row contact-field-row-1">
+                                    <div class="col-lg-6 colg-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            {{form.first_name}}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 colg-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            {{form.last_name}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row contact-field-row-2">
+                                    <div class="col-lg-6 colg-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            {{form.email}}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 colg-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            {{form.phone}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row contact-field-row-3">
+                                    <div class="col-lg-12 colg-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            {{form.query}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 colg-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            {{form.captcha}}
+
+                                            {% if form.errors %}
+                                            <font color="red">
+                                                <br>
+                                                Invalid CAPTCHA
+                                            </font>
+                                            {% endif %}
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row contact-field-row-3">
+                                    <div class="col-lg-12 colg-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <font color="grey">
+                                                {{form.captcha.help_text}}
+                                            </font>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-sm-12 text-center">
+                                        <button type="submit" class="btn btn-success btn-block contact-form-submit">SUBMIT</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+{% endblock %}

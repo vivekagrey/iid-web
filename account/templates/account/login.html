@@ -1,0 +1,103 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block extra_head %}
+<title>Login or Sign Up - Indian Institute of Drones</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid univ-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>LOGIN / SIGN UP</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="login-signup py-3">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-4">
+                    <div class="">
+                        <div class="form-header">
+                            <h2><center>Log In</center></h2>
+                        </div>
+                        <hr>
+                        <div class="form-body">
+                            <form method="POST">
+                                {% csrf_token %}
+                                {% for field in login_form %}
+                                <div class="form-group">
+                                    {{ field.label_tag }}
+                                    {% render_field field class="form-control" %}
+                                    {% if field.help_text %}
+                                    <small style="color: grey">{{ field.help_text }}</small>
+                                    {% endif %}
+
+                                    {% for error in field.errors %}
+                                    <p style="color: red">{{error}}</p>
+                                    {% endfor %}
+                                </div>
+                                {% endfor %}
+
+                                {% if login_form.non_field_errors %}
+                                <p style="color: red">{{ login_form.non_field_error }}</p>
+                                {% endif %}
+
+                                {% if message %}
+                                <p style="color: red">{{message}}</p>
+                                {% endif %}
+
+                                <button type="submit" name="login" class="btn btn-block btn-lg btn-primary">Log In</button>
+                                <br>
+                                <center>
+                                    <br>
+                                    <a href="{% url 'password_reset'%}">Forgot password?</a>
+                                </center>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4">
+                    <div class="">
+                        <div class="form-header">
+                            <h2><center>Sign Up</center></h2>
+                        </div>
+                        <hr>
+                        <div class="form-body">
+                            <form method="post">
+                                  {% csrf_token %}
+                                  {% for field in signup_form %}
+                                <div class="form-group">
+                                    {{ field.label_tag }} <br>
+                                    {% render_field field class="form-control" %}
+                                    {% if field.help_text %}
+                                    <small style="color: grey">{{field.help_text}}</small>
+                                    {% endif %}
+
+                                    {% for error in field.errors %}
+                                        <p style="color: red">{{ error }}</p>
+                                    {% endfor %}
+
+                                </div>
+                                  {% endfor %}
+                                <button type="submit" name="signup" class="btn btn-block btn-lg btn-primary">Sign Up</button>
+                                <br>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

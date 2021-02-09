@@ -1,0 +1,107 @@
+{% extends 'app/base.html' %}
+{% block extra_head %}
+<title>My Courses - Indian Institute of Drones</title>
+
+<style>
+    .mycourselist {
+        background-color: #fff;
+        padding: 10px;
+        margin: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.8);
+    }
+    .course-name{font-size: 1.1rem;}
+    .transaction{margin: 0;}
+    .date h5{
+        font-size: 0.95rem;
+    }
+    .date .expiry{}
+    .date .expired{
+        color: red;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid univ-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>MY COURSES</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if order_items %}
+    {% for order_item in order_items %}
+<section class="py-1">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row mycourselist">
+                <div class="col-sm-2">
+                    {% if order_item.get_item.online_course %}
+                        {% if order_item.course_age %}
+                        <a href="{{ order_item.get_item.get_lesson_list }}">
+                            <img src="{{order_item.get_item.image.url}}" width="100%"></a>
+                        {% else %}
+                            <img src="{{order_item.get_item.image.url}}" width="100%">
+                        {% endif %}
+                    {% else %}
+                    <a href="{% url 'account:schedule'%}"><img src="{{order_item.get_item.image.url}}"  width="100%"></a>
+                    {% endif %}
+                </div>
+                <div class="col-sm-4">
+                    <h5 class="course-name">{{order_item.get_item}}</h5>
+                    <br>
+                    <p class="transaction">
+                        Transaction ID : {{order_item.order_set.all.first.transaction.transaction_id}}
+                    </p>
+                </div>
+                <div class="col-sm-3 date">
+                    <h5><center>
+                        <b>Purchased on :</b> <br>{{order_item.order_set.all.first.ordered_date}}<br>
+                        {% if order_item.get_item.online_course %}
+                        {% if order_item.course_age %}
+                        <br><b>Expiry Date :</b><br><span class="expiry">{{order_item.get_expiry_date}}</span>
+                        {% else %}
+                        <br><b>Expired on : </b><br><span class="expired">{{order_item.get_expiry_date}} IST</span>
+                        {% endif %}
+                        {% endif %}</center>
+                    </h5>            
+                </div>
+                <div class="col-sm-3 text-center">
+                    {% if order_item.get_item.online_course %}
+                        {% if order_item.course_age %}
+                            <a class="btn btn-success my-2" href="{{ order_item.get_item.get_lesson_list }}">View Course Content</a>
+                        {% else %}
+                            <p style="font-size: 1.2rem; color: red">Course Expired!</p>
+                        {% endif %}
+                    {% else %}
+                    <a class="btn btn-primary my-2" href="{% url 'account:schedule' %}">View Training Schedule</a>
+                    {% endif %}                      
+                    <a class="btn btn-info mt-1" href="{% url 'app:pdf_view' order_item.get_order_transaction %}" target="_blank" rel="noreferrer">View Receipt</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        {% endfor %}
+    {% endif %}
+
+{% if flag %}
+
+<section class="py-4">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <a href="{% url 'app:courses' %}" class="btn btn-success">Checkout Courses</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+{% endblock %}

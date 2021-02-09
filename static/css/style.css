@@ -1,0 +1,200 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* theme color: #283B62 (blue)  #ff6830 (orange)*/
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 90px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #000;
+}
+
+html{
+    background-color: #fff;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-size: 16px;
+    font-family: 'Ubuntu', sans-serif!important;
+}
+
+.btn{border-radius: 0!important;}
+
+/*____________________________________________________________________________________________________________________*/
+
+.main-navv{
+    background-color: #fff;
+    box-shadow: 2px 0.5rem 1rem rgba(0, 0, 0, 0.4);
+}
+
+.top-header div{
+    padding-right: 40px;
+}
+.top-header p{
+    margin-bottom: 0;
+    font-size: 80%;
+}
+.top-header p a{
+    color: #000;
+    font-weight: bold;
+    text-decoration: none
+}
+
+.navbar-navv{
+    font-size: 115%;
+    color: #000;
+}
+.navbar-navv a:hover{
+    color: #ff6830;
+}
+.nav-linkk{
+    padding: 0px 12px!important;
+    color: #000;
+    font-weight: bold;
+}
+
+.badgee{
+    font-size: 60%!important;
+    padding: 0.1rem!important;
+    border: 0.5px solid black;
+}
+/*____________________________________________________________________________________________________________________*/
+
+.jumbotronn{
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url("/static/images/Homepage/homepage-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 400px;
+}
+
+.highlights{
+    background-color: rgba(40, 59, 98, 0.6);
+    margin-top: 80px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.numberr, .criteriaa{
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.cardd{
+    position: relative;
+    padding: 5px !important;
+}
+.cardd-txt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+
+/*____________________________________________________________________________________________________________________*/
+
+.main-footer{
+    background-image: linear-gradient(rgba(40, 59, 98, 0.9), rgba(40, 59, 98, 0.9)), url("/static/images/courses-page-bg.jpg");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+.main-footer h5{
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.footer-img{
+    height: auto;
+    width: 60%;
+    padding: 15px 0px;
+}
+.footer-social{
+    padding: 0px 8px;
+}
+.footer-social i{
+    font-size: 1.5rem;
+    color: #fff;
+    opacity: 0.6;
+}
+.footer-social i:hover{
+    color: #fff;
+    opacity: 1;
+}
+.footer-lists li{
+    padding: 4px 0px;
+}
+.footer-lists li a{
+    color: #fff;
+    font-size: 0.9rem;
+}
+.footer-copyright{font-size: 0.7rem}
+.footer-copyright a{
+    color: #fff;
+    text-decoration: none;
+}
+.footer-copyright a:hover,
+.footer-lists li a:hover{
+    color: #ff6830;
+    text-decoration: none;
+}
+.footer-copyright p{
+    margin: 0;
+}
+
+#topBtn {
+  display: none; 
+  position: fixed; 
+  bottom: 20px; 
+  right: 30px; 
+  z-index: 99; 
+  border: none; 
+  outline: none; 
+  background-color: #000000; 
+  color: white; 
+  cursor: pointer; 
+  padding: 15px; 
+  border-radius: 5px; 
+  font-size: 1.5rem; 
+}
+
+#topBtn:hover {
+  background-color: #ff6830; 
+}
+
+/*____________________________________________________________________________________________________________________*/
+.univ-header{
+        background-image: linear-gradient(rgba(40, 59, 98, 0.6), rgba(40, 59, 98, 0.6)), url("/static/images/univ-header.jpg");
+        background-position: 0% 40%;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+.univ-header h1{
+    color: #fff;
+    margin: 80px 0px;
+    font-size: 3rem;
+}

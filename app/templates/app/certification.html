@@ -1,0 +1,93 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block extra_head %}
+<title>Certifications - Indian Institute of Drones | Certified Instructors</title>
+<meta name="keywords" content="drone pilot courses, online drone courses, fixed wing drone pilot training, multirotor drone pilot training, Drone Training FTO">
+<meta name="description" content="IID is proud to be associated with Pioneer Flying Academy (FTO) for Small Category Drone Training. Certificates of Indian Institute of Drones. Get Certified by Ex - UAV Military Instructors. Become a UAV Pilot.">
+
+<style>
+
+.certification img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: 80%;
+    border: 1px solid;
+}
+
+.certification p{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5px;
+}
+    .cert{
+        margin-top: 10px;
+        padding-bottom: 5px;
+    }
+    .zoom{
+        text-decoration: none !important;
+        color: #000;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid univ-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>CERTIFICATION</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="certification">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 cert">
+                    <a href="{% static 'images/Certification/PFA Letter.png' %}" class="zoom">
+                        <img src="{% static 'images/Certification/PFA Letter.jpg' %}" alt="Satisfactory Letter from DGCA">
+                    <p>Partnernship with Pioneer Flying Academy (FTO) for conducting Drone Training</p></a>
+                </div>
+                <div class="col-sm-6 cert">
+                    <a href="{% static 'docs/JR5 Exemption.pdf' %}" class="zoom">
+                        <img src="{% static 'images/Certification/JR5 Exempt.jpg' %}" alt="Satisfactory Letter from DGCA">
+                    <p>Johhnnette-JR5 Exempted by MoCA for conducting Drone Training</p></a>
+                </div>
+                <div class="col-sm-6 cert">
+                    <a href="{% static 'images/Certification/dgca_letter_1.jpg' %}" class="zoom">
+                        <img src="{% static 'images/Certification/dgca_letter_1.jpg' %}" alt="Satisfactory Letter from DGCA">
+                    <p>Satisfactory Letter from DGCA</p></a>
+                </div>
+                <div class="col-sm-6 cert">
+                    <a href="{% static 'images/Certification/dgca_letter_2.jpg' %}" class="zoom">
+                        <img src="{% static 'images/Certification/dgca_letter_2.jpg' %}" alt="Committe for UAS Manufacturing  by DCGA">
+                    <p>Committe for UAS Manufacturing  by DGCA</p></a>
+                </div>
+            
+                <div class="col-sm-6 cert">
+                    <a href="{% static 'images/Certification/IID_reg.jpg' %}" class="zoom">
+                        <img src="{% static 'images/Certification/IID_reg.jpg' %}" alt="IID Registration Certificate">
+                     <p>IID Registration Certificate</p></a>
+                </div>
+                <div class="col-sm-6 cert">
+                    <a href="{% static 'images/Certification/Instructor_certificate.jpg' %}" class="zoom">
+                    <img src="{% static 'images/Certification/Instructor_certificate.jpg' %}" alt="IID Instructor  Certificate" width="80%">
+                    <p>IID Instructor  Certificate</p></a>
+                </div>
+            
+                <div class="col-sm-6 cert">
+                    <a href="{% static 'images/Certification/sample_certificate.jpg' %}" class="zoom">
+                        <img src="{% static 'images/Certification/sample_certificate.jpg' %}" alt="Your Certificate" width="80%">
+                    <p>Your Certificate</p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

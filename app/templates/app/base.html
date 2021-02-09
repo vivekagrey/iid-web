@@ -1,0 +1,235 @@
+{% load static %}
+{% load cart_template_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TDVRGH4');</script>
+    <!-- End Google Tag Manager -->
+	{% block extra_head %}   
+	{% endblock %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/queries.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" async></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" async></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous" async></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'images/favicon/apple-icon-57x57.png' %}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'images/favicon/apple-icon-60x60.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/favicon/apple-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'images/favicon/apple-icon-76x76.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/favicon/apple-icon-114x114.png' %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'images/favicon/apple-icon-120x120.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'images/favicon/apple-icon-144x144.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'images/favicon/apple-icon-152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-icon-180x180.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/favicon/android-icon-36x36.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/favicon/android-icon-48x48.png' %}">
+    <link rel="icon" type="image/png" sizes="72x72" href="{% static 'images/favicon/android-icon-72x72.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'images/favicon/android-icon-96x96.png' %}">
+    <link rel="icon" type="image/png" sizes="144x144" href="{% static 'images/favicon/android-icon-144x144.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'images/favicon/android-icon-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'images/favicon/favicon-96x96.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}">
+    <link rel="shortcut icon" href="{% static 'images/favicon/favicon.ico' %}">
+    <link rel="manifest" href="{% static 'images/favicon/manifest.json' %}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{% static 'images/favicon/ms-icon-144x144.png' %}">
+    <meta name="theme-color" content="#ffffff">
+</head>
+ 
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDVRGH4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+    <div class="container-fluid sticky-top navbar-expand-lg main-navv">
+        <div class="container" style="max-width: 1200px">
+            <div class="top-header">
+                <div class="text-right d-none d-lg-block">
+                    <p>
+                        {% if not request.user.is_authenticated %}
+                        <a href="tel: +918074611720" style="font-size: 0.9rem"><i class="fas fa-phone-alt"></i> +91-8074611720</a> |
+                        <a href="/login"><i class="fas fa-user-plus"></i> SIGNUP</a>
+                        {% else %}
+                        <a href="{% url 'account:profile' %}"><i class="fas fa-user"></i> PROFILE</a> |
+                        <a href="{% url 'account:mycourses' %}"><i class="fas fa-graduation-cap"></i> MY COURSES</a> |
+                        <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> LOGOUT</a>
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+            <nav class="navbar" style="padding-top: 0">
+                <a class="navbar-brand" href="{% url 'app:home' %}" style="padding-top: 0; padding-bottom: 0">
+                    <img class="" src="{% static 'images/Logo/IID_logo1.jpg' %}" height="80px" width="auto" alt="IID Logo">
+                </a>
+                <button class="navbar-toggler togglerr" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav mr-auto navbar-navv">
+                        <a class="nav-link nav-linkk" href="{% url 'app:courses' %}">Courses</a>
+                        <a class="nav-link nav-linkk" href="{% url 'account:schedule' %}">Training Schedule</a>
+                        <a class="nav-link nav-linkk" href="{% url 'app:about' %}">About</a>
+                        <a class="nav-link nav-linkk" href="{% url 'app:gallery' %}">Gallery</a>
+                        <a class="nav-link nav-linkk" href="{% url 'app:DGCA' %}">DGCA</a>
+                        <a class="nav-link nav-linkk" href="{% url 'app:franchise' %}">Franchise</a>
+                        <a class="nav-link nav-linkk" href="https://www.johnnetteworld.com/blog" rel="noreferrer" target="_blank">Blog</a>
+                        <a class="nav-link nav-linkk" href="{% url 'app:contact' %}">Contact</a>
+                        
+                        {% if not request.user.is_authenticated %}
+                        <a class="nav-link nav-linkk " href="/login"><i class="fas fa-sign-in-alt"></i> Login</a>
+                        {% else %}
+                        <a class="nav-link nav-linkk" href="{% url 'app:order-summary' %}">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge badgee">
+                                {{request.user|cart_item_count}}
+                            </span>
+                        </a>
+                        
+                        <a class="nav-link nav-linkk d-lg-none d-xl-none" href="{% url 'account:profile' %}"><i class="fas fa-user"></i> PROFILE</a>
+                        <a class="nav-link nav-linkk d-lg-none d-xl-none" href="{% url 'account:mycourses' %}"><i class="fas fa-graduation-cap"></i> MY COURSES</a>
+                        <a class="nav-link nav-linkk d-lg-none d-xl-none" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> LOGOUT</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </nav>
+            
+            
+        </div>
+    </div>
+    
+<style>
+    .messages{
+        background-color: #2e6da4;
+        color: white;
+        box-shadow: 12px 12px 12px #e61c66;
+        text-align: center;
+        font-size: 120%;
+    }
+</style>
+
+{% if messages %}
+    <div class="messages">
+       {% for message in messages %}
+        <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+       {% endfor %}
+    </div>
+{% endif %}
+
+{% block content %}
+
+{% endblock %}
+    
+	<footer class="main-footer py-4">
+		<div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3 pb-4">
+                        <a href="{% url 'app:home' %}"><img src="{% static 'images/Logo/IID_white.gif' %}" class="footer-img" alt="IID Logo"></a>     
+                        <br>
+                        <a class="footer-social" rel="noopener" title="IID Facebook" href="https://www.facebook.com/indianinstituteofdrones/" target="_blank">
+                            <i class="fab fa-facebook-square"></i>
+                        </a>
+                        <a class="footer-social" rel="noopener" title="IID Twitter" href="https://twitter.com/iiodrones" style="padding: 0px 8px" target="_blank">
+                            <i class="fab fa-twitter-square"></i>
+                        </a>
+                        <a class="footer-social" rel="noopener" title="IID Linkedin" href="http://www.linkedin.com/in/indian-institute-of-drones" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a class="footer-social" rel="noopener" title="IID YouTube" href="https://www.youtube.com/channel/UC1bP9s7ipvLu6OmvAf3H99Q" target="_blank">
+                            <i class="fab fa-youtube-square"></i>
+                        </a>
+                        <hr style="margin-top: 5;">
+                        <img src="{% static 'images/Homepage/VISA-logo.png' %}" alt="Visa Logo" width="15%">
+                        <img src="{% static 'images/Homepage/mastercard-logo.png' %}" alt="Mastercard Logo" width="15%">
+                        <img src="{% static 'images/Homepage/upi-logo.png' %}" alt="UPI Logo" width="15%">
+				    </div>
+                    <div class="col-sm-2">
+                        <h5>Company</h5>
+                        <ul class="list-unstyled footer-lists">
+                            <li><a href="{% url 'app:about' %}">About Us</a></li>
+                            <li><a href="{% url 'app:franchise' %}">Franchise</a></li>
+                            <li><a href="{% url 'app:testimonials' %}">Testimonials</a></li>  
+                            <li><a href="{% url 'app:gallery' %}">Training Gallery</a></li> 
+                            <li><a href="{% url 'app:news-and-events' %}">Media Coverage</a></li>
+                            <li><a href="{% url 'app:letters' %}">Satisfactory Letters</a></li>
+                            <li><a href="{% url 'app:organizations' %}">Organizations Trained</a></li>
+                            <li><a href="{% url 'app:infrastructure' %}">Infrastructure Gallery</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2">
+                        <h5>Courses</h5>
+                        <ul class="list-unstyled footer-lists">
+                            <li><a href="/course/multirotor-drone-pilot-course/">Multirotor Pilot Course</a></li>
+                            <li><a href="/course/diploma-multirotor-drone-pilot-course/">Diploma in Multirotor Pilot Course</a></li>
+                            <li><a href="/course/fixed-wing-pilot-course/">Fixed-wing Pilot Course</a></li>
+                            <li><a href="/course/drone-operations-management-professional/">Drone Operations and Management</a></li>
+                            <li><a href="/course/multirotor-drone-engineering-course/">Multirotor Drone Engineering Course</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2 col-xs-12">
+                        <h5>Important</h5>
+                        <ul class="list-unstyled footer-lists">
+                            <li><a href="{% url 'account:schedule' %}">Training Schedule</a></li>
+                            <li><a href="{% url 'app:DGCA' %}">DGCA</a></li>
+                            <li><a href="{% url 'app:pilot-list' %}">Pilot List</a></li>
+                            <li><a href="{% url 'app:certification' %}">Certification</a></li>
+                            <li><a href="https://www.iidjobs.com/" rel="noopener" target="_blank">Drone Jobs</a></li>
+                            <li><a href="{% url 'account:profile' %}">My Account</a></li>
+                            <li><a href="{% url 'app:t-c' %}">Terms and Conditions</a></li>
+                            <li><a href="{% url 'app:indemnity' %}">Indemnity Bond</a></li>
+                        </ul>
+				    </div>
+                    
+                    <div class="col-sm-3">
+                        <h5>Get In Touch</h5>
+                        <ul class="list-unstyled footer-lists">
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <a href="tel: +918074611720"> +91-8074611720</a> 
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:director@iiodrones.com">director@iiodrones.com</a>
+                            </li><hr>
+                            <li>
+                                <a>Timings: 0930 to 1730 Hours <br>(Monday to Saturday)</a>
+                            </li>
+                        </ul>
+				    </div>
+                </div>
+                <hr>
+                <div class="footer-copyright text-center">© 
+                    <script type="text/javascript">
+                        document.write(new Date().getFullYear());
+                    </script> 
+                     <a href="{% url 'app:home' %}"> Indian Institute of Drones</a> 
+                    <br>
+                    <p>
+                        All rights reserved.
+                        <a href="{% url 'app:privacy' %}">Privacy Policy</a> |
+                        <a href="{% url 'app:cookies' %}">Cookies Policy</a> |
+                        <a href="/sitemap.xml">Sitemap</a>
+                    </p>
+                </div>
+            </div>
+		
+        </div>
+
+	</footer>
+
+</body>
+</html> 

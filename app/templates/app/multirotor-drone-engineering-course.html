@@ -1,0 +1,466 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block extra_head %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+<title>Multirotor Drone Enginnering Course in India - Indian Institute of Drones | Best Drone Pilot Training Institute</title>
+<meta name="keywords" content="Multirotor Drone Pilot Training, Drone Pilot Training, Small Category Drone Pilot Training, DGCA Approved Drone Training, Drone Engineering Course, Drone Assembly Course in India">
+<meta name="description" content="Learn Drone Assembling, Troubleshooting with Indian Institute of Drones. The course includes detailed procedures of multirotor assembly including use of Artificial Intelligence in Drones using Linux based OS">
+
+<style>
+     .page-header{
+         background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url("/static/images/Courses/multirotor-drone-engineering.png");
+         background-position: center;
+         background-size: cover;
+         background-repeat: no-repeat;
+         color: #fff;
+    }
+    .page-header h1{
+        color: #fff;
+        margin: 30px 0px 70px;
+        font-size: 3rem;
+    }
+    .page-header h4{
+        font-size: 1rem;
+    }
+    .page-header h5{
+        font-size: 2.5rem
+    }
+    .div-cta{margin: 30px 0px 30px}
+    .page-header a{
+        text-decoration: none;
+        color: #ff6830;
+        font-size: 1.7rem;
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+    .page-header a:hover{text-decoration: none;color: #fff}
+    .org-logo ul{
+        list-style-type: none;
+        padding: 0;
+    }
+    .org-logo ul li{
+        display: inline-block;
+        padding: 4px 5px;
+    }
+    .org-logo-img{width: 5vw;}
+    .stat-num{
+        font-size: 1.5rem;
+        display: inline-block;
+        padding-right: 5px;
+        color: #ff6830;
+    }
+    .stat-text{
+        display: inline-block;
+        font-size: 1.5rem;
+    }
+    .num{
+        display: inline-block;
+        margin-right: 0.25rem;
+        font-weight: 900;
+        line-height: 1;
+        font-size: 3.5rem;
+    }
+    .txt{
+        text-transform: uppercase;
+        font-weight: 300;
+        display: inline-block;
+        line-height: 1.2;
+    }
+    .accordian-card{
+        border: none!important;
+    }
+    .accordian-header{
+        background-color: #fff!important;
+        border-bottom: none!important;
+    }
+    .accordian-header:hover{
+        background-color: rgba(68, 205, 255, 0.19)!important;
+    }
+    .accordian-header a{
+        font-weight: 300;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: #ff6830;
+    }
+    .accordian-header a i{
+        color:#000!important;
+        padding-right: 15px;
+    }
+    .accordian-header a[aria-expanded=true] .fa-chevron-circle-right{display: none}
+    .accordian-header a[aria-expanded=false] .fa-chevron-circle-down{display: none}
+    .dayy{
+        background-color: rgba(40, 59, 98, 0.9);
+        padding: 0px 9px;
+        border-radius: 4px;
+        color: #fff;
+        font-weight: 400;
+    }
+    .strongg{
+        padding-left: 45px;
+        margin: 0;
+        font-weight: 500;
+    }
+    .curriculumm h5{font-weight: 400}
+    .curriculumm ul{
+        padding-left: 30px;
+    }
+    .curriculumm ul li{
+        font-size: 0.9rem;
+        padding: 4px 0px;
+    }
+    .benefitss-container{
+        background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.86)), url("/static/images/Courses/benefits-bg.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat
+    }
+    .benefitss{
+        max-width: 600px;
+        border: 3px solid #283B62;
+    }
+    .benefitss ul{
+        list-style-type: none;
+        padding-left: 20px;
+        margin: 20px 0;
+    }
+    .benefitss ul li{
+        padding: 7px 0px;
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+    .benefitss ul li i{
+        padding-right: 10px;
+    }
+    .accordian-faq{}
+    .accordian-faq .card{
+        border: none!important;
+    }
+    .accordian-faq .card-header{
+        background-color: #fff;
+        border-bottom: 1px solid #000!important;
+    }
+    .accordian-faq a[aria-expanded=false] .fa-chevron-circle-up{display: none}
+    .accordian-faq a[aria-expanded=true] .fa-chevron-circle-down{display: none}
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="course-detail-page">
+    <div class="container-fluid page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h1>{{course.title}}</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4>Want to learn in-depth about Multirotor Drones?</h4>
+                    <h5>Assemble, Engineer and Troubleshoot Multirotor Drones</h5>
+                    <p class="my-4">Learn all about Multirotors and use of Artificial Intelligence in Drones</p>
+<!--                    <div class="text-center div-cta"><a href="#course-curriculum">View Curriculum</a></div>-->
+                </div>
+            </div>   
+        </div>
+    </div>
+    
+    <div class="container-fluid py-3 curriculum-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h3 style="font-weight: 700; font-size: 2rem">Curriculum designed such that you<br>make the most of it</h3>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container" style="max-width: 400px;">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="accordion">
+                        <div class="card accordian-card">
+                            <div class="card-header accordian-header">
+                                <a class="collapsed card-link stretched-link" data-toggle="collapse" href="#collapse1" aria-expanded="false">
+                                    <i class="fas fa-chevron-circle-right"></i><i class="fas fa-chevron-circle-down"></i> Day <span class="dayy">01</span>
+                                </a>
+                                <p class="strongg">Introduction to Multirotor Drones</p>
+                            </div>
+                            <div id="collapse1" class="collapse" data-parent="#accordion">
+                                <div class="card-body curriculumm">
+                                    <h5>Introduction to Multirotor Drones</h5>
+                                    <ul>
+                                        <li>Basic Drone Terminology</li>
+                                        <li>Types of Drones</li>
+                                        <li>Identification of UAV components</li>
+                                        <li>Working of UAV components</li>
+                                        <li>Circuit Diagram of a UAV</li>
+                                        <li>Assembling of a Multirotor by the Instructor</li>
+                                        <li>Do's and Don'ts for Multirotor assembly</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card accordian-card">
+                            <div class="card-header accordian-header">
+                                <a class="collapsed card-link stretched-link" data-toggle="collapse" href="#collapse2" aria-expanded="false">
+                                    <i class="fas fa-chevron-circle-right"></i><i class="fas fa-chevron-circle-down"></i> Day <span class="dayy">02</span>
+                                </a>
+                                <p class="strongg">Assembling, Using a Ground Control Station</p>
+                            </div>
+                            <div id="collapse2" class="collapse" data-parent="#accordion">
+                                <div class="card-body curriculumm">
+                                    <h5>Introduction to Ground Control Station</h5>
+                                    <ul>
+                                        <li>Summary of first day</li>
+                                        <li>Introduction to Mission Planner</li>
+                                        <li>How to setup a Multirotor with the help of the GCS</li>
+                                        <li>Extraction of Flight Logs using GCS</li>
+                                        <li>Advanced configuration using the GCS</li>
+                                    </ul>
+                                    <h5>Assembling and Preparation for flight</h5>
+                                    <ul>
+                                        <li>Assembly of a Multirotor by the Student</li>
+                                        <li>Configuring and calibrating a Multirotor with the help of the GCS</li>
+                                        <li>All  Pre-flight checks</li>
+                                        <li>Test flight of drone by Instructor</li>
+                                        <li>Troubleshooting common errors and problems</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card accordian-card">
+                            <div class="card-header accordian-header">
+                                <a class="collapsed card-link stretched-link" data-toggle="collapse" href="#collapse3" aria-expanded="false">
+                                    <i class="fas fa-chevron-circle-right"></i><i class="fas fa-chevron-circle-down"></i> Day <span class="dayy">03</span>
+                                </a>
+                                <p class="strongg">Use of Artificial Intelligence in Drones</p>
+                            </div>
+                            <div id="collapse3" class="collapse" data-parent="#accordion">
+                                <div class="card-body curriculumm">
+                                    <h5>Introduction to AI in drones</h5>
+                                    <ul>
+                                        <li>Introduction to Raspberry Pi</li>
+                                        <li>Introduction to Python</li>
+                                        <li>Using Python to communicate with Flight Controller</li>
+                                        <li>Introduction to Artificial Intelligence using Raspberry Pi</li>
+                                    </ul>
+                                    <h5>Field Flying</h5>
+                                    <ul>
+                                        <li>Field flying of drone by the Instructor</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     
+    <div class="container-fluid py-3 benefitss-container">
+        <div class="container benefitss" style="max-width: 600px">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5 class="text-center my-4" style="font-size: 1.6rem">Why Should You Do This Course?</h5>
+                    <ul>
+                        <li><i class="far fa-hand-point-right"></i>Learn to assemble Multirotor Drones</li>
+                        <li><i class="far fa-hand-point-right"></i>Get trained from expert instructors</li>
+                        <li><i class="far fa-hand-point-right"></i>Perfect Course for people who want to gain in-depth knowledge about working of a Multirotor drone</li>
+                        <li><i class="far fa-hand-point-right"></i>Get hands-on experience of assembly and troubleshooting</li>
+                        <li><i class="far fa-hand-point-right"></i>Learn Emergency Procedures</li>
+                        <li><i class="far fa-hand-point-right"></i>Explore the opportunities in Drone market</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center pt-3">
+                    <p style="font-size: 1rem;">Course fee: <span style="font-size: 1.3rem"><b>₹ {{course.price}}</b></span> <span style="font-size: 0.8rem">(incl. GST)</span></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center pb-3">
+                    <a class="btn btn-success" href="{% url 'app:add-to-cart' course.slug %}">SIGN ME UP!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid py-3 faq-container">
+        <div class="container" style="max-width: 900px">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h5 class="text-center py-2" style="font-size: 2rem">Frequently Asked Questions</h5>
+                    <div id="accordion2" class="accordian-faq">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="collapsed card-link stretched-link" data-toggle="collapse" href="#collapse21" aria-expanded="false">
+                                    How is this course beneficial for my career?<span class="float-right"><i class="fas fa-chevron-circle-up"></i><i class="fas fa-chevron-circle-down"></i></span>
+                                </a>
+                            </div>
+                            <div id="collapse21" class="collapse" data-parent="#accordion2">
+                                <div class="card-body">
+                                    <p>This multirotor drone engineering course will help you to enhance your technical  knowledge and skills which will help you to get jobs in the drone industry.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="collapsed card-link stretched-link" data-toggle="collapse" href="#collapse22" aria-expanded="false">
+                                    On which kind of drone I shall  get the training?<span class="float-right"><i class="fas fa-chevron-circle-up"></i><i class="fas fa-chevron-circle-down"></i></span>
+                                </a>
+                            </div>
+                            <div id="collapse22" class="collapse" data-parent="#accordion2">
+                                <div class="card-body">
+                                    <p>The training will be done on a basic quadcopter multirotor. The training drone will be provided by IID. However, if you want, you can bring your own drone kit as well.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="collapsed card-link stretched-link" data-toggle="collapse" href="#collapse23" aria-expanded="false">
+                                    Shall I be able to assemble the multirotor drone by myself after this course?<span class="float-right"><i class="fas fa-chevron-circle-up"></i><i class="fas fa-chevron-circle-down"></i></span>
+                                </a>
+                            </div>
+                            <div id="collapse23" class="collapse" data-parent="#accordion2">
+                                <div class="card-body">
+                                    <p>Yes, you will become an expert in assembling a multirotor drone at the end of this course. You will not only be able to assemble, but also identify and troubleshoot common problems.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="collapsed card-link stretched-link" data-toggle="collapse" href="#collapse24" aria-expanded="false">
+                                    Will I get to assemble the drone?<span class="float-right"><i class="fas fa-chevron-circle-up"></i><i class="fas fa-chevron-circle-down"></i></span>
+                                </a>
+                            </div>
+                            <div id="collapse24" class="collapse" data-parent="#accordion2">
+                                <div class="card-body">
+                                    <p>Yes! As mentioned in the curriculum, the drone assembly will be done by the instructor on the first day. On the second day, you will be assembling and configuring the drone on your own under the guidance of our instructor.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="collapsed card-link stretched-link" data-toggle="collapse" href="#collapse25" aria-expanded="false">
+                                    Do I have to bring my own kit for drone assembly practical?<span class="float-right"><i class="fas fa-chevron-circle-up"></i><i class="fas fa-chevron-circle-down"></i></span>
+                                </a>
+                            </div>
+                            <div id="collapse25" class="collapse" data-parent="#accordion2">
+                                <div class="card-body">
+                                    <p>It is not mandatory to bring your own drone kit. For training purpose, a kit will be provided by IID.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="collapsed card-link stretched-link" data-toggle="collapse" href="#collapse26" aria-expanded="false">
+                                    Will I also get the flying experience of drones?<span class="float-right"><i class="fas fa-chevron-circle-up"></i><i class="fas fa-chevron-circle-down"></i></span>
+                                </a>
+                            </div>
+                            <div id="collapse26" class="collapse" data-parent="#accordion2">
+                                <div class="card-body">
+                                    <p>No. Unless you are a certified drone pilot, you will not be allowed to fly any drone. If you want to fly your drone, then you must undergo pilot training course. You can get in touch with us to know more about the bundle course.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid py-5">
+        <div class="container" style="max-width: 700px">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="contact-form-heading">
+                        <h5 class="text-center">
+                            <span style="font-size: 2rem">Got Questions?</span><br>
+                            <a href="tel:+918074611720" style="font-size: 2rem; color: #009016; text-decoration: none">Talk to an Expert!</a><br><br>
+                            or<br><br>
+                            <span style="font-size: 1.8rem">Fill Out the Form</span>
+                        </h5>
+                    </div>
+                    <div class="contact-form-content">
+                        <div class="contact-form-main">
+                            <form method="POST" class="">
+                            {% csrf_token %}
+                            <div class="contact-form-fields">
+                                <div class="row contact-field-row-1">
+                                    <div class="col-lg-6 colg-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            {{form.first_name}}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 colg-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            {{form.last_name}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row contact-field-row-2">
+                                    <div class="col-lg-6 colg-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            {{form.email}}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 colg-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            {{form.phone}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row contact-field-row-3">
+                                    <div class="col-lg-12 colg-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            {{form.query}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 colg-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            {{form.captcha}}
+
+                                            {% if form.errors %}
+                                            <font color="red">
+                                                <br>
+                                                Invalid CAPTCHA
+                                            </font>
+                                            {% endif %}
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row contact-field-row-3">
+                                    <div class="col-lg-12 colg-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <font color="grey">
+                                                {{form.captcha.help_text}}
+                                            </font>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-sm-12 text-center">
+                                        <button type="submit" class="btn btn-success btn-block contact-form-submit">SUBMIT</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+{% endblock %}

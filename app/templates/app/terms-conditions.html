@@ -1,0 +1,60 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<title>Terms and Conditions - Indian Institute of Drones | Military Certified Drone Pilot Instructors</title>
+<meta name="keywords" content="drone pilot courses, online drone courses, fixed wing drone pilot training, multirotor drone pilot training">
+<meta name="description" content="Terms and Conditions for using the website of Indian Institute of Drones.">
+
+<style>
+    .refund-policy{
+        background-color: #fff;
+        color: #000;
+    }
+    .refund-policy li{
+        padding: 5px 0px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid univ-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>Terms and Conditions</h1>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<section class="refund-policy py-4">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3>Refund Policy for Classroom Courses</h3>
+                    <ul>
+                       <li>All the classroom (or offline) courses purchased on the IID website are <strong>non-refundable</strong>. No refund will be granted in any circumstances.</li> 
+                       <li>If you are unable to attend the course on the designated date, then you can join any one of the upcoming batches scheduled (up to 1 month from the date of purchase).</li> 
+                       <li>Please contact us via the provided methods to get your batch rescheduled.</li> 
+                    </ul>
+                    <br>
+                    <h3>Refund Policy for Online Courses</h3>
+                    <ul>
+                        <li>All the Online courses available on IID website are <strong>non-refundable</strong>. Once the course has been purchased by the user, no refund will be granted regardless of the reason. </li> 
+                        <li>All the online courses have been tested extensively on different types of devices and browsers. If you are facing any issues in accessing the course content, or any other problem, you can contact us for assistance.</li>
+                    </ul>
+                    <br>
+                    <p>If you have any questions or queries regarding refund, please get in touch with us through either of the methods:</p>
+                    <ul>
+                        <li>Write to us: director@iiodrones.com</li>
+                        <li>Visit the <a title="Go to Contact Page" href="{% url 'app:contact' %}">Contact</a> Page </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

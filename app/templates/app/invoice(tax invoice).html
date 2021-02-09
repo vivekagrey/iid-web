@@ -1,0 +1,125 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    </head>
+    
+    <style>
+        td {
+            border: none !important;
+        }
+    </style>
+    
+    <body>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row" style="margin-bottom: 20px">
+                    <div class="col-xs-12">
+                        <center><img src="{% static 'images/jtpl_logo.webp' %}" alt="Johnnette Logo" width="15%"></center>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="contact-info" style="font-size: 18px;">
+                        <center>
+                            Johnnette Technologies Pvt. Ltd. | +91 - 120 6710475 | contact@johnnette.in | www.johnnetteworld.com
+                            <hr style="max-width: 850px; margin: 0;">
+                        </center>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="invoice-title">
+                            <h2><center><b>INVOICE</b></center></h2>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-12"> 
+                        <center><table class="table">
+                            <thead>
+                                <tr>
+                                    <th colspan="4">Recipient Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="width: 20%">Name</td>
+                                    <td style="width: 30%">{{username}}</td>
+                                    <td style="width: 30%">Invoice No.</td>
+                                    <td style="width: 20%">20-21/JTPL/OL/{{invoice_num}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 20%">Phone</td>
+                                    <td style="width: 30%">{{user_phone}}</td>
+                                    <td style="width: 30%">Invoice Date</td>
+                                    <td style="width: 20%">{{transaction_date}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 20%">Email</td>
+                                    <td style="width: 30%">{{user_email}}</td>
+                                    <td style="width: 30%">GSTIN</td>
+                                    <td style="width: 20%">09AADCJ4864F1ZE</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 20%">Transaction ID</td>
+                                    <td style="width: 30%">{{transaction_id}}</td>
+                                </tr>
+                            </tbody>
+                        </table></center>
+                        <hr>
+                        <center><table class="table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10%">S. No.</th>
+                                    <th style="width: 40%">Description</th>
+                                    <th style="width: 30%">HSN</th>
+                                    <th style="width: 20%">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in order_items %}
+
+                                <tr>
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ item.item.title }}</td>
+                                    <td>999293</td>
+                                    <td>{{ item.item.price }}</td>
+                                </tr>
+
+                                {% endfor %}
+
+                                <tr>
+                                    <td colspan="3" class="text-right" style="padding-right: 40px;"><b>Invoice value before tax</b></td>
+                                    <td>{{ amt_no_tax }}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-right" style="padding-right: 40px;">SGST @ 9%</td>
+                                    <td>0.00</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-right" style="padding-right: 40px;">CGST @ 9%</td>
+                                    <td>0.00</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-right" style="padding-right: 40px;">IGST @ 18%</td>
+                                    <td>{{ igst }}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-right" style="padding-right: 40px;"><b>Invoice value after tax</b></td>
+                                    <td><b>{{ total_amt }}</b></td>
+                                </tr>
+
+
+                            </tbody>
+                        </table></center>
+                        <br><br><hr>
+                        <p>
+                            Note: This is a computer generated invoice hence does not need signature.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

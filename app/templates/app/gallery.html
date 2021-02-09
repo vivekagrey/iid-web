@@ -1,0 +1,226 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block extra_head %}
+<title>Training Gallery - Indian Institute of Drones | Drone Pilot Training India</title>
+<meta name="keywords" content="drone pilot courses, online drone courses, fixed wing drone pilot training, multirotor drone pilot training">
+<meta name="description" content="Training Gallery of Indian Institute of Drones. Get Certified by Ex - UAV Military Instructors. Become a UAV Pilot.">
+
+<style>
+    
+.galleryModal {
+    /*width: 1500px;*/
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.galleryImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.galleryImg:hover {opacity: 0.7;}
+
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.9); 
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+.gclose {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.gclose:hover,
+.gclose:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<style>
+    
+    .galleryImg{ /*must be in 16:9*/
+        height: 217px;
+        width: 350px;
+    }
+    
+    @media only screen and (max-device-width: 1200px){
+        .galleryImg{ /*must be in 16:9*/
+        height: 273px;
+        width: 440px;
+        }
+    }
+    
+    @media only screen and (max-device-width: 1024px){
+        .galleryImg{ /*must be in 16:9*/
+        height: 180px;
+        width: 290px;
+        }
+    }
+    
+    @media only screen and (max-device-width: 768px){
+        .galleryImg{ /*must be in 16:9*/
+        height: 130px;
+        width: 210px;
+        }
+    }
+    
+    @media only screen and (max-device-width: 480px){
+        .galleryImg{ /*must be in 16:9*/
+        height: 167.6px;
+        width: 270px;
+        }
+    }
+    
+    @media only screen and (max-device-width: 350px){
+        .galleryImg{ /*must be in 16:9*/
+        height: 143px;
+        width: 230px;
+        }  
+    }
+    
+    @media only screen and (max-device-width: 300px){
+        .galleryImg{ /*must be in 16:9*/
+        height: 118px;
+        width: 190px;
+        }  
+    }
+    }
+</style>
+<div class="container-fluid univ-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>TRAINING GALLERY</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="training-gallery">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row py-4">
+                {% for batch in page_obj %}
+                <div class="col-sm-4 text-center">       
+                    <img id="myImg{{batch.position}}" class="galleryImg" src="{{batch.image.url}}" alt="IID Batch {{batch.batch_no}}">
+                    <h5 class="pt-2">Batch No. {{batch.batch_no}}</h5>
+                    <h5>Location: {{batch.location}}</h5>
+                    <h5>{{batch.course}}</h5>  
+                    <hr style="border-bottom: 1.5px solid #000">
+                    <div id="myModal{{batch.position}}" class="modal">
+
+                        <span class="gclose" id="gclose{{batch.position}}">&times;</span>
+
+                        <img class="modal-content" id="img{{batch.position}}">
+
+                        <div id="caption{{batch.position}}" class="caption">
+                            <center>Batch No. {{batch.batch_no}}</center><br>
+                            <center>Location: {{batch.location}}</center><br>
+                            <center>{{batch.course}}</center>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    var modal{{batch.position}} = document.getElementById("myModal{{batch.position}}");
+                    var img{{batch.position}} = document.getElementById("myImg{{batch.position}}");
+                    var modalImg{{batch.position}} = document.getElementById("img{{batch.position}}");
+                    var captionText{{batch.position}} = document.getElementById("caption{{batch.position}}");
+                    img{{batch.position}}.onclick = function(){
+                        modal{{batch.position}}.style.display = "block";
+                        modalImg{{batch.position}}.src = this.src;
+                    }
+                    var span = document.getElementById("gclose{{batch.position}}");
+                    span.onclick = function() {
+                        modal{{batch.position}}.style.display = "none";
+                    }
+                </script>
+                {% endfor %}
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="pagination justify-content-center">
+                        {% if page_obj.has_previous %}
+                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
+                        {% else %}
+                        <li class="page-item disabled"><span class="page-link"><i class="fa fa-chevron-left" aria-hidden="true"></i></span></li>
+                        {% endif %}
+
+                        {% if page_obj.number|add:'-4' > 1 %}
+                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.number|add:'-5' }}">&hellip;</a></li>
+                        {% endif %}
+
+                        {% for i in page_obj.paginator.page_range %}
+                        {% if page_obj.number == i %}
+                        <li class="page-item active"><span class="page-link">{{ i }} <span class="sr-only">(current)</span></span></li>
+
+                        {% elif i > page_obj.number|add:'-5' and i < page_obj.number|add:'5' %}
+                        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                        {% endif %}
+                        {% endfor %}
+
+                        {% if page_obj.paginator.num_pages > page_obj.number|add:'4' %}
+                            <li class="page-item"><a class="page-link" href="?page={{ page_obj.number|add:'5' }}">&hellip;</a></li>
+                        {% endif %}
+
+                        {% if page_obj.has_next %}
+                            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+                        {% else %}
+                            <li class="page-item disabled"><span class="page-link"><i class="fa fa-chevron-right" aria-hidden="true"></i></span></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

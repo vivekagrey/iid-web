@@ -1,0 +1,117 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block extra_head %}
+<title>{{course.title}} - Indian Institute of Drones</title>
+
+<style>
+.video-lecture {
+    background-color: #fff;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.img-container {
+    float:left;
+    position:relative;
+}
+
+.img-container:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.img-container:hover .play{
+    display:block;
+}
+
+.play {
+    position : absolute;
+    display:none;
+    top: 40px;
+    width:auto;
+    margin:0 auto; 
+    left:0px;
+    right:0px;
+    z-index:100;
+    text-align: center;
+}
+
+.play span{
+    font-size: 300%;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+
+
+{% if course %}
+
+    {% if course.online_course %}
+
+<div class="container-fluid univ-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>{{course.title}}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="course-content" style="background-color: #ecf0f1">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row" style="padding-top: 30px; padding-bottom: 20px;">
+                <div class="offset-sm-2 col-sm-8 text-center pb-2" id="lsvid">
+                    <video oncontextmenu="return false;" id="lsvid" src="" type="video/mp4" width="100%" height="auto;" controls></video>
+                </div>
+            </div>
+            
+            <div class="row">
+                {% for lesson in lessons %}
+                <div class="col-sm-2 text-center">
+                    <div class="" id="thumb-{{lesson.position}}">
+                        <p>
+                            <img style="position: relative; z-index: 1; opacity: 0.8; top:0; left:0; cursor: pointer" src="{{lesson.thumbnail.url}}" width="100%" alt="" data-toggle="modal" data-target="#lession{{lesson.position}}">
+                            <img style="position: absolute; z-index: 2; opacity: 0.7; top: 3%; right:10%; cursor: pointer" src="{% static 'images/Icons/play-button.svg' %}" width="15%">
+                        </p>
+                        <a href="#lession{{lesson.position}}" onclick="topFunction()" style="cursor: pointer; text-decoration: none;">
+                            <center>Lecture - {{lesson.position}}<br>{{lesson}}</center>
+                            <br>
+                        </a>    
+                        
+                        <script>
+                        document.getElementById("thumb-{{lesson.position}}").addEventListener("click", displayVid);
+                        function displayVid() {
+                          document.getElementById("lsvid").innerHTML = '<video oncontextmenu="return false;" src="{{lesson.video_file.url}}" width="100%" height="auto;" controls></video>';
+                        }
+                        </script>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="row pb-3">
+                <div class="col-sm-12 text-center">
+                    <a class="btn btn-info" href="#" target="_blank" rel="noreferrer">Download Course Textbook</a><br><br>
+                    <a class="btn btn-success" href="https://forms.gle/9JdXRHPoHGuDh5ZJ9" target="_blank" rel="noreferrer">Start Test</a>
+                    {% else %}
+                    <div class="" style="text-align: center; padding: 20px; background-color: #ecf0f1">
+                        <a class="btn btn-primary" href="{% url 'account:schedule' %}">View Training Schedule</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% else %}
+<section style="padding: 20px; background-color: #fff;text-align: center">
+    <a href="{% url 'account:mycourses' %}" class="btn btn-primary">My Courses</a>
+</section>
+{% endif %}
+
+{% endblock %}

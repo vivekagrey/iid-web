@@ -1,0 +1,178 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<title>Courses - Indian Institute of Drones | Drone Pilot Courses Online</title>
+<meta name="keywords" content="drone pilot courses, drone photography course, drone management course, online drone courses, fixed wing drone pilot training, multirotor drone pilot training">
+<meta name="description" content="Indian Institute of Drones. Become a UAV Pilot. Explore Professional Courses for UAVs/Drones">
+
+<style>
+    .course-pg-header{
+        background-image: linear-gradient(rgba(40, 59, 98, 0.6), rgba(40, 59, 98, 0.6)), url("/static/images/univ-header.jpg");
+        background-position: 0% 40%;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .course-pg-header h1{
+        color: #fff;
+        margin: 80px 0px;
+        font-size: 3rem;
+    }
+    .fluidd1{background-color: #fff;}
+    .fluidd2{
+        background-image: linear-gradient(rgba(250, 250, 250, 0.7),rgba(230, 230, 230, 0.4),rgba(250, 250, 250, 0.7) )
+    }
+    .course-coll{
+        padding: 4px 5px!important;
+    }
+    .course-cardd img{
+        padding: 5px!important;
+    }
+    .course-price{
+        color: #283B62;
+        font-weight: bold;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .course-desc{
+        padding-left: 10px
+    }
+    .course-desc li{
+        padding: 5px 0px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid course-pg-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>Our Courses</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="section-courses" style="padding-bottom: 10px">
+    <div class="container-fluid fluidd1">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2 class="my-3">Classroom Courses</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid fluidd2">
+        <div class="container">
+            <div class="row">
+                {% for item in object_list %}
+                {% if not item.online_course %}
+                <div class="col-sm-4 course-coll">
+                    <div class="card course-cardd">
+                        <img src="{{item.image.url}}" width="100%" alt="{{item.title}} at Indian Institute of Drones">
+                        <div class="card-body py-2">
+                            <h3 class="text-center">{{item.title}}</h3>
+                            <p class="course-price">₹ {{item.price}} <span style="font-size: 0.7rem">(incl. GST)</span></p>
+                            <ul class="course-desc">
+                                {% if item.description1 %}
+                                <li>{{item.description1}}</li>
+                                {% endif %}
+                                {% if item.description2 %}
+                                <li>{{item.description2}}</li>
+                                {% endif %}
+                                {% if item.description3 %}
+                                <li>{{item.description3}}</li>
+                                {% endif %}
+                                {% if item.description4 %}
+                                <li>{{item.description4}}</li>
+                                {% endif %}
+                                {% if item.description5 %}
+                                <li>{{item.description5}}</li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <div class="text-center my-2">
+                            <a class="btn btn-info" href="{{ item.get_absolute_url }}">Course Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid fluidd1" id="online-courses">
+        <div class="container">
+           <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2 class="my-3">Online Courses</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid fluidd2">
+        <div class="container">
+            <div class="row"> 
+                {% for item in object_list %}
+                {% if item.online_course %}
+                <div class="col-sm-4 course-coll">
+                    <div class="card course-cardd">
+                        <img src="{{item.image.url}}" width="100%" alt="{{item.title}} at Indian Institute of Drones">
+                        <div class="card-body py-2">
+                            <h3 class="text-center">{{item.title}}</h3>
+                            <p class="course-price">₹ {{item.price}} <span style="font-size: 0.7rem">(incl. GST)</span></p>
+                            <ul class="course-desc">
+                                {% if item.description1 %}
+                                <li>{{item.description1}}</li>
+                                {% endif %}
+                                {% if item.description2 %}
+                                <li>{{item.description2}}</li>
+                                {% endif %}
+                                {% if item.description3 %}
+                                <li>{{item.description3}}</li>
+                                {% endif %}
+                                {% if item.description4 %}
+                                <li>{{item.description4}}</li>
+                                {% endif %}
+                                {% if item.description5 %}
+                                <li>{{item.description5}}</li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <div class="text-center my-2">
+                            <a class="btn btn-info" href="{{ item.get_absolute_url }}">Course Details</a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}   
+            </div>
+        </div>
+    </div>
+</section>
+
+<button onclick="topFunction()" id="topBtn" title="Go to top"><i class="fas fa-arrow-circle-up"></i></button>
+<script> 
+    mybutton = document.getElementById("topBtn");
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+    function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+</script>
+
+{% endblock %}

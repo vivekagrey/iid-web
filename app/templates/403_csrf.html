@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Not Found - Error 404</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row" style="padding-top: 120px;">
+                <center>
+                    <img src="{% static 'images/quad.svg' %}" alt="Drone Image" width="15%"><br>
+                    <h1>Oh Snap!</h1>
+                    <h1>You're in the no-fly zone.</h1>                
+                    <br>
+                    <a href="{% url 'app:home' %}" class="btn btn-info" style="font-size: 25px;"><img src="{% static 'images/heli.svg' %}" alt="Drone Image" width="30%">
+                        <br>Return to Home</a>
+                </center>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

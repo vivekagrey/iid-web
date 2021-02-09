@@ -1,0 +1,26 @@
+{% load static %}
+<html>
+<head>
+    <title>Redirecting to PayU for Payment</title>
+    <script>
+    function redirect_for_payment_at_payu() {
+      var payu_form = document.forms.payu_form;
+      payu_form.submit();
+    }
+    </script>
+</head>
+    
+<body onload="redirect_for_payment_at_payu();">
+    <h1 style="margin-top: 100px"><center>Redirecting to Payment Gateway...</center></h1>
+    <h3><center>Do not press back button or refresh the page</center></h3>
+    <p style="padding-top: 50px; text-align: center">
+        <img src="{% static 'images/Icons/loading.gif' %}" alt="loading"> 
+    </p>
+    <form action="{{ action }}" method="post" name="payu_form">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+    </form>
+    
+<body>
+<html>
